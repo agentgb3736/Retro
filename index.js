@@ -73,17 +73,7 @@ bot.on('message', message => {
     console.log('Le bot fais peur');
     }
 	
-	bot.on('message', message => {
-	if(message.content === prefix + "ping")
-	var embed = new Discord.RichEmbed()
-	 .setTitle("Latence de l'API")
-	.addField(`${message.createdTimesstamp - Date.nom()}ms`)
-	 .setColor("#0800F6")
-	 
-	 message.channel.sendEmbed(embed)
-})
-    
-if(message.content.startsWith(prefix + "servlist")){
+if ( message . content . startsWith ( préfixe  +  "servlist" )) {
   message.delete(message.author)
   const embed = new Discord.RichEmbed()
    .setColor("#0800F6")
