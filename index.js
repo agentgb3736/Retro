@@ -73,10 +73,15 @@ bot.on('message', message => {
     console.log('Le bot fais peur');
     }
 	
-	if (message.content.startsWith(prefix + 'ping')) {
-          message.channel.sendMessage('Pong smile ! Ton ping est de ' +${Date.now() - message.createdTimestamp}+ ' ms');
-      
-      }
+	bot.on('message', message => {
+	if(message.content === prefix + "ping")
+	var embed = new Discord.RichEmbed()
+	 .setTitle("Latence de l'API")
+	.addField(`${message.createdTimesstamp - Date.nom()}ms`)
+	 .setColor("#0800F6")
+	 
+	 message.channel.sendEmbed(embed)
+})
     
 if(message.content.startsWith(prefix + "servlist")){
   message.delete(message.author)
