@@ -72,6 +72,11 @@ bot.on('message', message => {
     message.reply("Destruction du serveur dans 3 2 1 :jack_o_lantern: Happy Halloween.");
     console.log('Le bot fais peur');
     }
+	
+	if (message.content.startsWith(prefix + 'ping')) {
+          message.channel.sendMessage('Pong smile ! Ton ping est de ' +${Date.now() - message.createdTimestamp}+ ' ms');
+      
+      }
     
 if(message.content.startsWith(prefix + "servlist")){
   message.delete(message.author)
