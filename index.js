@@ -12,7 +12,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("/help I CS®『🚫』11 servs", {type:"STREAMING"});    
+bot.user.setActivity("/help I CS®『🚫』12 servs", {type:"STREAMING"});    
 });
 
 bot.on("guildMemberAdd", member => {
