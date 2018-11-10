@@ -283,31 +283,31 @@ if(message.content.startsWith(prefix + "say")){
         bot.channels.findAll('name', '🚨alertes').map(channel => channel.send(embed))
       }
 	
-	if (message.content.startsWith(prefix + "report")) {
+	
+if (message.content.startsWith(prefix + "report")) {
           message.delete(message.author);
-        
+          let argson = message.content.split(" ").splice(1);
         
         let target = message.mentions.users.first()
-        let reason = args.slice(1).join(' ');
-        let reports = message.guild.channels.find('name', config.reportsChannel);
+        let reason = argson.slice(1).join(' ');
+        let reports = message.guild.channels.find('name', "『🚨』report");
         
         if (!target) return message.reply('Merci de mentionner la personne');
         if (!reason) return message.reply('Quelle est la reason');
-        if (!reports) return message.reply(`Merci de créer le channel ${config.logsChannel} pour les logs`);
+        if (!reports) return message.reply(`Merci de créer le channel 『📃』report pour les logs`);
         
-        let embed = new discord.RichEmbed()
+        let rembed = new Discord.RichEmbed()
         .setColor('RANDOM')
-        .setThumbnail(target.user.avatarURL)
         .addField('Membre Report', `${target.username} ID: ${target.id}`)
         .addField('Report Par', `${message.author.username} ID:${message.author.id}`)
         .addField('Heure du Report', message.createdAt)
         .addField('Report', message.channel)
         .addField('Raison du Report', reason)
-        .setFooter('Report Membre', target.displayAvatarURL);
+        .setFooter("ClesiriusProtect®『🚫』")
         message.channel.send(`${target.tag} reporté par ${message.author} pour {reason}`).then(msg => msg.delete(2000));
         
-  reports.send(embed);  
+  reports.sendEmbed(rembed);  
         
     }
-	
+
   });
