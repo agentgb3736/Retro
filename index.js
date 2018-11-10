@@ -55,9 +55,9 @@ Et surtout passe de bons moments avec nous !`)
 
 bot.on('message', message => { 
 
-    if(message.content === "Bonjour"){
+    if(message.content === "Salut"){
     	message.delete(message.author);
-        message.reply("Salut");
+        message.reply("Hey");
         console.log('Le bot dit Bonjour');
     }
 
