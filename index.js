@@ -91,7 +91,7 @@ if(message.content === prefix + "help") {
         .addField(":oncoming_police_car: Modération", "``/mod``")
         .addField(":rotating_light: Administration", "``/admin``")
         .addField(":tada: FUN", "``/fun``")
-        .addField("Support","https://discord.gg/JdQwkNN")
+        .addField("Support","https://discord.gg/vw4GT6s")
         .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=501488481164460032&permissions=8&scope=bot")
         .setFooter("ClesiriusSecurity®『🚫』")
         .setTimestamp()
