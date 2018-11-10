@@ -304,6 +304,7 @@ if (message.content.startsWith(prefix + "report")) {
         .addField('Report', message.channel)
         .addField('Raison du Report', reason)
         .setFooter("ClesiriusProtect®『🚫』")
+	setTimestamp()
         message.channel.send(`${target.tag} reporté par ${message.author} pour {reason}`).then(msg => msg.delete(2000));
         
   reports.sendEmbed(rembed);  
