@@ -12,7 +12,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("/help I CS®『🚫』12 servs", {type:"STREAMING"});    
+bot.user.setActivity("/help I CS®『🚫』13 servs", {type:"STREAMING"});    
 });
 
 bot.on("guildMemberAdd", member => {
@@ -24,7 +24,7 @@ bot.on("guildMemberAdd", member => {
   .setTitle("Arrivée d'un nouvel utilisateur")
   .addField("Un nouvel utilisateur vient d'arriver", `Il s'agit de [${member.user.tag}](https://discordapp.com/)`, true)
   .setDescription("J'espère tu vas passer un bon moment parmi nous")
-  .addField("Ma commande est **`?help`**", "Si tu souhaites savoir mon fonctionnement")
+  .addField("Ma commande est **`/help`**", "Si tu souhaites savoir mon fonctionnement")
   .addField(`Nombre de membres après l'arrivée de __${member.user.tag}__`, member.guild.memberCount)
   .setFooter(`ID : ${member.user.id}`)
   .setTimestamp()
