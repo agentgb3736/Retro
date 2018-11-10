@@ -282,4 +282,32 @@ if(message.content.startsWith(prefix + "say")){
         .setTimestamp()
         bot.channels.findAll('name', '🚨alertes').map(channel => channel.send(embed))
       }
+	
+	if (message.content.startsWith(prefix + "report")) {
+          message.delete(message.author);
+        
+        
+        let target = message.mentions.users.first()
+        let reason = args.slice(1).join(' ');
+        let reports = message.guild.channels.find('name', config.reportsChannel);
+        
+        if (!target) return message.reply('Merci de mentionner la personne');
+        if (!reason) return message.reply('Quelle est la reason');
+        if (!reports) return message.reply(`Merci de créer le channel ${config.logsChannel} pour les logs`);
+        
+        let embed = new discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(target.user.avatarURL)
+        .addField('Membre Report', `${target.username} ID: ${target.id}`)
+        .addField('Report Par', `${message.author.username} ID:${message.author.id}`)
+        .addField('Heure du Report', message.createdAt)
+        .addField('Report', message.channel)
+        .addField('Raison du Report', reason)
+        .setFooter('Report Membre', target.displayAvatarURL);
+        message.channel.send(`${target.tag} reporté par ${message.author} pour {reason}`).then(msg => msg.delete(2000));
+        
+  reports.send(embed);  
+        
+    }
+	
   });
