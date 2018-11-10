@@ -203,7 +203,7 @@ if(message.content.startsWith(prefix + "kick")) {
 
         if(!args[0]) return message.channel.send("Tu dois préciser un nombre de messags à surpprimer !")
         message.channel.bulkDelete(args[0]).then(() => {
-            message.channel.send(`${args[0]} messages ont été surpprimés !:recycle:`);
+            message.channel.send(`${args[0]} messages ont été surpprimés !:recycle:`).then(msg => msg.delete(2000));
         })
     }
         
