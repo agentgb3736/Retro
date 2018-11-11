@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 var prefix = "/";
 
 
-bot.login("NTAxNDg4NDgxMTY0NDYwMDMy.DshGeA.-24fzuhohwduk1bhVr_-y_FdpPk");
+bot.login(process.env.TOKEN);
 
 bot.on("ready", () => {
   console.log("Je suis prêt")
