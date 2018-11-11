@@ -91,8 +91,8 @@ if(message.content === prefix + "help") {
         .addField(":oncoming_police_car: Modération", "``/mod``")
         .addField(":rotating_light: Administration", "``/admin``")
         .addField(":tada: FUN", "``/fun``")
-        .addField("Support","https://discord.gg/JdQwkNN")
-        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=501488481164460032&permissions=8&scope=bot")
+        .addField("Support","https://discord.gg/88rtxDd")
+        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
         .setFooter("ClesiriusSecurity®『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send("La page d'aide vous à bien été envoyée en Message Privé !:incoming_envelope:")
@@ -100,6 +100,7 @@ if(message.content === prefix + "help") {
         console.log("Un utilisateur a effectué la commande d'aide !")
    
      }
+	
  
  if(message.content === prefix + "mod") {
         var mod_embed = new Discord.RichEmbed()
@@ -108,8 +109,8 @@ if(message.content === prefix + "help") {
         .addField(":mute: Muet", "``/mute`` ``/unmute``")
         .addField(":warning: Warn","``/warn``")
         .addField("Question", "Pour toute question merci de mp mon développeur _ClesiriusPE_ 『🎃』#1421")
-        .addField("Support","https://discord.gg/JdQwkNN")
-        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=501488481164460032&permissions=8&scope=bot")
+        .addField("Support","https://discord.gg/88rtxDd")
+        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
         .setFooter("ClesiriusSecurity®『🚫』", bot.user.displayAvatarURL)
  
         .setTimestamp()
@@ -126,8 +127,8 @@ if(message.content === prefix + "help") {
         .addField(":no_entry_sign: Ban", "``/ban``")
         .addField(":door: Kick", "``/kick``")
         .addField("Question", "**Pour toute question merci de mp mon développeur _ClesiriusPE_ 『🎃』#1421**")
-        .addField("Support","https://discord.gg/JdQwkNN")
-        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=501488481164460032&permissions=8&scope=bot")
+        .addField("Support","https://discord.gg/88rtxDd")
+        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
         .setFooter("ClesiriusSecurity®『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send("La page d'aide d'administration vous à bien été envoyée en Message Privé !:incoming_envelope:")
@@ -142,8 +143,8 @@ if(message.content === prefix + "help") {
         .setTitle("Voici la page d'aide fun !")
         .addField(":confetti_ball: Fun", "``/vcs`` ``8ball`` ``/say``")
         .addField("Question", "**Pour toute question merci de mp mon développeur _ClesiriusPE_ 『🎃』#1421**")
-        .addField("Support","https://discord.gg/JdQwkNN")
-        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=501488481164460032&permissions=8&scope=bot")
+        .addField("Support","https://discord.gg/88rtxDd")
+        .addField("Invitation","https://discordapp.com/api/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
         .setFooter("ClesiriusSecurity®『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send("La page d'aide fun vous à bien été envoyée en Message Privé !:incoming_envelope:")
