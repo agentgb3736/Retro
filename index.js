@@ -90,7 +90,7 @@ if(message.content === prefix + "help") {
         .addField("Catégorie en ligne :white_check_mark:.")
         .addField("Catégorie en maintenance :warning:.")
         .addField("Catégorie Hors Ligne :x:")
-        .addField(":white_check_mark::oncoming_police_car: Modération", "``./mod``")
+        .addField(":warning::oncoming_police_car: Modération", "``./mod``")
         .addField(":white_check_mark::rotating_light: Administration", "``/admin``")
         .addField(":white_check_mark::tada: FUN", "``/fun``")
         .addField(":x::bar_chart:Autres", "``/autres``")
