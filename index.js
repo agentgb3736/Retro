@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] I SP®『🚫』7 servs", {type:"STREAMING"});    
+bot.user.setActivity("[/help] I SP®『🚫』10 servs", {type:"STREAMING"});    
 });
 
 bot.on("guildMemberAdd", member => {
@@ -73,7 +73,7 @@ bot.on('message', message => {
     console.log('Le bot fais peur');
     }
     
-if(message.content.startsWith(prefix + "servlist")){
+if(message.content.startsWith(prefix + "si")){
   message.delete(message.author)
   const embed = new Discord.RichEmbed()
    .setAuthor(message.author.tag, message.author.avatarURL)
