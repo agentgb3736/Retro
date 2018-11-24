@@ -55,9 +55,9 @@ Et surtout passe de bons moments avec nous !`)
 
 bot.on('message', message => { 
 
-    if(message.content === "Bonjour"){
+    if(message.content === "Salut"){
     	message.delete(message.author);
-        message.reply("Salut");
+        message.reply("Hey");
         console.log('Le bot dit Bonjour');
     }
 
@@ -88,68 +88,14 @@ if(message.content === prefix + "help") {
         var help_embed = new Discord.RichEmbed()
         .setColor("#0800F6")
         .setTitle("Voici la page d'aide !")
-        .addField("Catégorie en ligne.",":white_check_mark:")
-        .addField("Catégorie en maintenance.",":warning:")
-        .addField("Catégorie Hors Ligne.",":x:")
-        .addField(":warning:**Modération**", "``/mod``")
-        .addField(":white_check_mark::rotating_light: **Administration**", "``/admin``")
-        .addField(":white_check_mark::tada: **Fun**", "``/fun``")
-        .addField(":x::bar_chart:**Autres**", "``/autres``")
-        .addField("Support","https://discord.gg/88rtxDd")
-        .addField("Invitation","https://discordapp.com/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
-       .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
+        .addField("__**Modération**__", "``/clear`` ``/mute`` ``/unmute``")
+        .addField("__**Administration**__", "``/ban`` ``/kick``")
+        .addField("__**Fun**__", "``/say`` ``/vcs`` ``/8ball``")
+        .addField("__**Autres**__", "``/info`` ``invite``")
+        .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(help_embed)
         console.log("Un utilisateur a effectué la commande d'aide !")
-   
-     }
- 
- if(message.content === prefix + "mod") {
-        var mod_embed = new Discord.RichEmbed()
-        .setColor("#0800F6")
-        .setTitle("Voici la page d'aide de modération !")
-        .addField(":mute: Muet", "``/mute`` ``/unmute``")
-        .addField("Question", "Pour toute question merci de mp mon développeur _ClesiriusPE_#1421")
-        .addField("Support","https://discord.gg/88rtxDd")
-        .addField("Invitation","https://discordapp.com/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
-       .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-        .setTimestamp()
-        message.channel.send("La page d'aide de modération vous à bien été envoyée en Message Privé !:incoming_envelope:")
-        message.author.send(mod_embed)
-        console.log("Un utilisateur a effectué la commande d'aide moďération !")
-   
-     }
-     
- if(message.content === prefix + "admin") {
-        var adm_embed = new Discord.RichEmbed()
-        .setColor("#0800F6")
-        .setTitle("Voici la page d'aide d'administration !")
-        .addField(":no_entry_sign: Ban", "``/ban``")
-        .addField(":door: Kick", "``/kick``")
-        .addField("Question", "**Pour toute question merci de mp mon développeur _ClesiriusPE_ 『🎃』#1421**")
-        .addField("Support","https://discord.gg/88rtxDd")
-        .addField("Invitation","https://discordapp.com/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
-        .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-        .setTimestamp()
-        message.channel.send("La page d'aide d'administration vous à bien été envoyée en Message Privé !:incoming_envelope:")
-        message.author.send(adm_embed)
-        console.log("Un utilisateur a effectué la commande d'aide administration !")
-   
-     }
-  
-      if(message.content === prefix + "fun") {
-        var fun_embed = new Discord.RichEmbed()
-        .setColor("#0800F6")
-        .setTitle("Voici la page d'aide fun !")
-        .addField(":confetti_ball: Fun", "``/vcs`` ``/8ball`` ``/say``")
-        .addField("Question", "**Pour toute question merci de mp mon développeur _ClesiriusPE_ 『🎃』#1421**")
-        .addField("Support","https://discord.gg/88rtxDd")
-        .addField("Invitation","https://discordapp.com/oauth2/authorize?client_id=511104745096609792&permissions=8&scope=bot")
-        .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-        .setTimestamp()
-        message.channel.send("La page d'aide fun vous à bien été envoyée en Message Privé !:incoming_envelope:")
-        message.author.send(fun_embed)
-        console.log("Un utilisateur a effectué la commande d'aide fun !")
    
      }
      
