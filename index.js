@@ -88,10 +88,10 @@ if(message.content === prefix + "help") {
         var help_embed = new Discord.RichEmbed()
         .setColor("#0800F6")
         .setTitle("Voici la page d'aide !")
-        .addField("__**Modération**__", "``/clear`` ``/mute`` ``/unmute``")
-        .addField("__**Administration**__", "``/ban`` ``/kick``")
-        .addField("__**Fun**__", "``/say`` ``/vcs`` ``/8ball``")
-        .addField("__**Autres**__", "``/info`` ``invite``")
+        .addField("__**Modération**__ (3)", "``/clear`` ``/mute`` ``/unmute``")
+        .addField("__**Administration**__ (2)", "``/ban`` ``/kick``")
+        .addField("__**Fun**__ (3)", "``/say`` ``/vcs`` ``/8ball``")
+        .addField("__**Autres**__ (2)", "``/info`` ``invite``")
         .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(help_embed)
@@ -108,12 +108,12 @@ if(message.content === prefix + "help") {
 	 .addField("Owner du serveur", message.guild.owner)
 	 .addField("Crée le", message.guild.createdAt)
 	 .addField("Tu l'as rejoins le", message.member.joinedAt)
-  .addField("Region", message.guild.region)
-    .addField("Channels", message.guild.channels.size)
-    .addField("Members", message.guild.memberCount)
-    .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
-    .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
-    .addField("Roles", message.guild.roles.size)
+         .addField("Region", message.guild.region)
+         .addField("Channels", message.guild.channels.size)
+         .addField("Members", message.guild.memberCount)
+         .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
+         .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
+         .addField("Roles", message.guild.roles.size)
 	 .setColor("#0800F6")
 	 .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
 	 .setTimestamp()
@@ -237,8 +237,8 @@ if(message.content.startsWith(prefix + "say")){
         message.delete(message.author); 
         let argson = message.content.split(" ").splice(1);
         let vcsmsg = argson.join(" ")
-        if(!message.guild.channels.find("name", "🚨alertes")) return message.reply("Erreur, le channel 🚨alertes est introuvable");
-        if(message.channel.name !== "🚨alertes") return message.reply("Commande à effectuer dans 🚨alertes");
+        if(!message.guild.channels.find("name", "「🚨」alertes")) return message.reply("Erreur, le channel 「🚨」alertes est introuvable");
+        if(message.channel.name !== "「🚨」alertes") return message.reply("Commande à effectuer dans 「🚨」alertes");
         if(!vcsmsg) return message.reply("Merci d'envoyer un message dans la globalité des discords");
     
         var replys = [];
@@ -250,6 +250,6 @@ if(message.content.startsWith(prefix + "say")){
         .addField("Autres","**``Merci d'avoir lu'.``**")
    .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
-        bot.channels.findAll('nam🚨alertesertes').map(channel => channel.send(embed))
+        bot.channels.findAll('name', '「🚨」alertes').map(channel => channel.send(embed))
       }
   });
