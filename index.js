@@ -106,7 +106,7 @@ if(message.content === prefix + "help") {
 	 .addField("Nom du discord", message.guild.name)
 	 .addField("ID", message.guild.id)
 	 .addField("Owner du serveur", message.guild.owner)
-	 .addField("Crée le", message.guild.createAt)
+	 .addField("Crée le", message.guild.createdAt)
 	 .addField("Tu l'as rejoins le", message.member.joinedAt)
   .addField("Region", message.guild.region)
     .addField("Channels", message.guild.channels.size)
