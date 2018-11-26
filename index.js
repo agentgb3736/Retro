@@ -123,6 +123,7 @@ message.channel.sendEmbed(info_embed)
 }
        
 if(message.content.startsWith(prefix + "kick")) {
+        message.delete(message.author);
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permissions !");
 
         if(message.mentions.users.size === 0) {
@@ -144,6 +145,7 @@ if(message.content.startsWith(prefix + "kick")) {
     }
 
     if(message.content.startsWith(prefix + "ban")) {
+	    message.delete(message.author);
         if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("Vous n'avez pas la premissions");
 
         if(message.mentions.users.size === 0) {
