@@ -140,7 +140,7 @@ if(message.content.startsWith(prefix + "kick")) {
         }
         
         kick.kick().then(member => { 
-            message.channel.send(`${member.user.username} est kick par ${message.author.username}`)
+            message.channel.send(`${message.author.tag} est kick par ${message.author.username}`)
         });
     }
 
@@ -161,7 +161,7 @@ if(message.content.startsWith(prefix + "kick")) {
             return message.channel.send("Je n'ai pas la permission pour ban");
         }
         ban.ban().then(member => {
-            message.channel.send(`${member.username} est ban par ${message.author.username} !`)
+            message.channel.send(`${message.author.tag } est ban par ${message.author.username} !`)
         }
 
         )
