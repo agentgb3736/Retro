@@ -121,16 +121,6 @@ if(message.content === prefix + "help") {
 message.channel.sendEmbed(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
 }
-	
-	
-	if(message.content === prefix + "invite") {
-	var embed = new Discord.RichEmbed()
-	 .setTitle("Invite du bot")
-	 .addField("Lien du bot", `[Cliquer ici] (
-	 .setColor("#0800F6")
-	 
-	 message.channel.sendEmbed(embed)
-})
        
 if(message.content.startsWith(prefix + "kick")) {
         message.delete(message.author);
