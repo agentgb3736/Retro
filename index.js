@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] I SP®『🚫』26 servs.", {type:"WATCHING"});
+bot.user.setActivity("[/help] I SP®『🚫』27 servs.", {type:"WATCHING"});
 bot.user.setStatus('dnd')
 });
 
