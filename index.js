@@ -83,6 +83,7 @@ if(message.content.startsWith(prefix + "si")){
   }
 	
 if(message.content === prefix + "invite") {
+	message.delete(message.author);
         var invite_embed = new Discord.RichEmbed()
         .setColor("#0800F6")
         .setTitle("Invitation du Bot !")
@@ -93,6 +94,7 @@ if(message.content === prefix + "invite") {
   }
 
 if(message.content === prefix + "help") {
+	message.delete(message.author);
         var help_embed = new Discord.RichEmbed()
         .setColor("#0800F6")
         .setTitle("Voici la page d'aide !")
