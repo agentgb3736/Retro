@@ -11,7 +11,8 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] I SP®『🚫』28 servs.", {type:"STREAMING"});
+bot.user.setActivity("[/help] I SP®『🚫』28 servs.", {type:"WATCHING"});
+bot.user.status('dnd')
 });
 
 bot.on("guildMemberAdd", member => {
