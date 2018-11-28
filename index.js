@@ -88,6 +88,10 @@ if(message.content === prefix + "invite") {
         .setColor("#0800F6")
         .setTitle("Invitation du Bot !")
 	.addField('[Invite du Bot](https://discordbots.org/bot/511104745096609792)')
+	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
+        .setTimestamp()
+        message.channel.send(invite_embed)
+  }
 
 if(message.content === prefix + "help") {
         var help_embed = new Discord.RichEmbed()
