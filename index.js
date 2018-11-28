@@ -86,7 +86,7 @@ if(message.content === prefix + "invite") {
         var invite_embed = new Discord.RichEmbed()
         .setColor("#0800F6")
         .setTitle("Invitation du Bot !")
-	.addField('('Invite Bot')[https://discordbots.org/bot/511104745096609792]')
+	.addField("InviteBot", "`[InviteBot](https://discordapp.com/)`", true)
 	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(invite_embed)
