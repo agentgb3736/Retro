@@ -82,6 +82,12 @@ if(message.content.startsWith(prefix + "si")){
    .setTimestamp()
   message.channel.send(embed)
   }
+	
+if(message.content === prefix + "invite") {
+        var invite_embed = new Discord.RichEmbed()
+        .setColor("#0800F6")
+        .setTitle("Invitation du Bot !")
+	.addField('[Invite du Bot](https://discordbots.org/bot/511104745096609792)')
 
 if(message.content === prefix + "help") {
         var help_embed = new Discord.RichEmbed()
