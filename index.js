@@ -11,8 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] I SP®『🚫』28 servs.", {type:"WATCHING"});
-bot.user.setStatus('dnd')
+bot.user.setActivity("[/help] I SP®『🚫』28 servs.", {type:"STREAMING"});
 });
 
 bot.on("guildMemberAdd", member => {
@@ -87,7 +86,7 @@ if(message.content === prefix + "invite") {
         var invite_embed = new Discord.RichEmbed()
         .setColor("#0800F6")
         .setTitle("Invitation du Bot !")
-	.addField('[Invite du Bot](https://discordbots.org/bot/511104745096609792)')
+	.addField('(Invite Bot)[https://discordbots.org/bot/511104745096609792]')
 	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(invite_embed)
@@ -100,7 +99,7 @@ if(message.content === prefix + "help") {
         .addField("__**Modération**__ (3)", "``/clear`` ``/mute`` ``/unmute``")
         .addField("__**Administration**__ (2)", "``/ban`` ``/kick``")
         .addField("__**Fun**__ (3)", "``/say`` ``/vcs`` ``/8ball``")
-        .addField("__**Autres**__ (2)", "``/info`` ``invite``")
+        .addField("__**Autres**__ (2)", "``/info`` ``/invite``")
         .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(help_embed)
