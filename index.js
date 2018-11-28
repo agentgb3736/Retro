@@ -72,14 +72,14 @@ bot.on('message', message => {
     console.log('Le bot fais peur');
     }
     
-if(message.content.startsWith(prefix + "si")){
+if(message.content === prefix + "addbot") {
   message.delete(message.author)
-  const embed = new Discord.RichEmbed()
+  var bot_embed = new Discord.RichEmbed()
    .setAuthor(message.author.tag, message.author.avatarURL)
    .addField("**Noms des serveurs où est le bot :**", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
    .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
    .setTimestamp()
-  message.channel.send(embed)
+  message.channel.send(bot_embed)
   }
 	
 if(message.content === prefix + "invite") {
