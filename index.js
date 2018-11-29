@@ -82,17 +82,6 @@ if(message.content.startsWith(prefix + "addbot")){
        .setTimestamp()
       message.channel.send(serv_embed)
 }
-  
-  if(message.content === prefix + "invite") {
-	message.delete(message.author);
-        var invite_embed = new Discord.RichEmbed()
-         .setColor("#0800F6")
-         .setTitle("Invitation du Bot !")
-	.addField("InviteBot", ('[Lien du Bot](https://discordbots.org/bot/511104745096609792)') , true)
-	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-         .setTimestamp()
-        message.channel.send(invite_embed)
-  }
 
 if(message.content === prefix + "help") {
 	message.delete(message.author);
@@ -102,7 +91,7 @@ if(message.content === prefix + "help") {
         .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``")
         .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``")
         .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``")
-        .addField("__**Autres**__ - (2)", "``/info`` ``/invite``")
+        .addField("__**Autres**__ - (1)", "``/info`")
         .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(help_embed)
@@ -214,7 +203,7 @@ if (message.content.startsWith(prefix + "8ball")) {
 message.channel.sendEmbed(bembed)
 
 }
-
+	
 if(message.content.startsWith(prefix + "say")){
 	
 		message.delete(message.author);
