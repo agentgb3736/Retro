@@ -74,24 +74,23 @@ bot.on('message', message => {
     }
     
 if(message.content.startsWith(prefix + "addbot")){
-  message.delete(message.author)
-  const serv_embed = new Discord.RichEmbed()
-   .setAuthor(message.author.tag, message.author.avatarURL)
-   .addField("**Noms des serveurs où est le bot :**", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
-   .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-   .setTimestamp()
-  message.channel.send(serv_embed)
-  console.log("Commande effectué")
-  }
+      message.delete(message.author)
+      var serv_embed = new Discord.RichEmbed()
+       .setAuthor(message.author.tag, message.author.avatarURL)
+       .addField("**Noms des serveurs où est le bot :**", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+       .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
+       .setTimestamp()
+      message.channel.send(serv_embed)
+}
   
   if(message.content === prefix + "invite") {
 	message.delete(message.author);
         var invite_embed = new Discord.RichEmbed()
-        .setColor("#0800F6")
-        .setTitle("Invitation du Bot !")
+         .setColor("#0800F6")
+         .setTitle("Invitation du Bot !")
 	.addField("InviteBot", ('[Lien du Bot](https://discordbots.org/bot/511104745096609792)') , true)
 	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-        .setTimestamp()
+         .setTimestamp()
         message.channel.send(invite_embed)
   }
 
