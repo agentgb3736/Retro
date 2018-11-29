@@ -262,6 +262,6 @@ if(message.content.startsWith(prefix + "say")){
         .addField("Autres","**``Merci d'avoir lu'.``**")
    .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
-        bot.channels.findAll('nam🚨alertes').map(channel => channel.send(embed))
+        bot.channels.findAll('name, '🚨alertes').map(channel => channel.send(embed))
       }
   });
