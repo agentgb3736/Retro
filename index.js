@@ -72,16 +72,6 @@ bot.on('message', message => {
     message.reply("Destruction du serveur dans 3 2 1 :jack_o_lantern: Happy Halloween.");
     console.log('Le bot fais peur');
     }
-    
-if(message.content.startsWith(prefix + "addbot")){
-      message.delete(message.author)
-      var serv_embed = new Discord.RichEmbed()
-       .setAuthor(message.author.tag, message.author.avatarURL)
-       .addField("**Noms des serveurs où est le bot :**", bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
-       .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
-       .setTimestamp()
-      message.channel.send(serv_embed)
-}
 
 if(message.content === prefix + "help") {
 	message.delete(message.author);
@@ -109,12 +99,13 @@ if(message.content === prefix + "help") {
 	 .addField("Owner du serveur", message.guild.owner)
 	 .addField("Crée le", message.guild.createAt)
 	 .addField("Tu l'as rejoins le", message.member.joinedAt)
-  .addField("Region", message.guild.region)
-    .addField("Channels", message.guild.channels.size)
-    .addField("Members", message.guild.memberCount)
-    .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
-    .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
-    .addField("Roles", message.guild.roles.size)
+         .addField("Region", message.guild.region)
+         .addField("Channels", message.guild.channels.size)
+         .addField("Members", message.guild.memberCount)
+         .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
+         .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
+         .addField("Roles", message.guild.roles.size)
+	 .addField("Server", message.bot.user.guilds.size)
 	 .setColor("#0800F6")
 	 .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
 	 .setTimestamp()
