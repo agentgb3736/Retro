@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] I SP®『🚫』Bot Anti-Raid", {type:"STREAMING"});    
+bot.user.setActivity("[/help] I SP®『🚫』Anti-Raid 🚨", {type:"STREAMING"});    
 });
 
 bot.on("guildMemberAdd", member => {
