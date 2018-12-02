@@ -81,6 +81,7 @@ if(message.content === prefix + "invite") {
 	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send("La page d'invitation a bien été envoyée en Message Privé !:incoming_envelope:")
+	
 	message.author.send(invite_embed)
 	console.log("Commande Effectuée")
   }
@@ -96,7 +97,8 @@ if(message.content === prefix + "help") {
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
            .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL) 
            .setTimestamp()
-      message.channel.send("La page d'aide a bien été envoyée en Message Privé !:incoming_envelope:")
+        message.channel.send("La page d'aide a bien été envoyée en Message Privé !:incoming_envelope:")
+	
 	message.author.send(invite_embed)
        console.log("Un utilisateur a effectué la commande d'aide !") 
      
