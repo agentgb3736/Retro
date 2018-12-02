@@ -80,11 +80,11 @@ if(message.content === prefix + "invite") {
 	.addField("InviteBot", ('[Lien du Bot](https://discordbots.org/bot/511104745096609792)') , true)
 	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
-        message.channel.send("La page d'invitation a bien été envoyée en Message Privé !:incoming_envelope:")
 	
-	message.author.send(invite_embed)
-	console.log("Commande Effectuée")
-  }
+       message.channel.send(invite_embed)
+        console.log("Un utilisateur a effectué la commande d'aide !")
+   
+     }
     
 if(message.content === prefix + "help") {	
 	message.delete(message.author); 
@@ -97,12 +97,11 @@ if(message.content === prefix + "help") {
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
            .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL) 
            .setTimestamp()
-        message.channel.send("La page d'aide a bien été envoyée en Message Privé !:incoming_envelope:")
 	
-	message.author.send(invite_embed)
-       console.log("Un utilisateur a effectué la commande d'aide !") 
-     
-}
+       message.channel.send(help_embed)
+        console.log("Un utilisateur a effectué la commande d'aide !")
+   
+     }
 
      
 	if(message.content === prefix + "info") {
