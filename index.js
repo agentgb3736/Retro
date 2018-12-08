@@ -78,7 +78,7 @@ if(message.content === prefix + "invite") {
         .setColor("#0800F6")
         .setTitle("Invitation du Bot !")
 	.addField("InviteBot", ('[Lien du Bot](https://discordbots.org/bot/511104745096609792)') , true)
-	.setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
+	.setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
 	
        message.channel.send(invite_embed)
@@ -95,7 +95,7 @@ if(message.content === prefix + "help") {
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
-           .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL) 
+           .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL) 
            .setTimestamp()
 	
        message.channel.send(help_embed)
@@ -235,7 +235,7 @@ if(message.content.startsWith(prefix + "say")){
         .addField("Serveur", message.guild.name, true)
         .addField("Utilisateur", message.author.tag, true)
         .addField("Message", vcsmsg)
-        .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
+        .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         bot.channels.findAll('name', 'vcs-security').map(channel => channel.send(embed)) 
           }
@@ -255,7 +255,7 @@ if(message.content.startsWith(prefix + "say")){
         .setAuthor("SecurityProtect BOT - INFO", bot.user.avatarURL)
         .addField("Information",vcsmsg)
         .addField("Autres","**``Merci d'avoir lu'.``**")
-   .setFooter("SecurityProtect®/!\『🚫』", bot.user.displayAvatarURL)
+   .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
         .setTimestamp()
         bot.channels.findAll('name' ,'🚨alertes').map(channel => channel.send(embed))
 }
