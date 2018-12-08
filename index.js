@@ -71,6 +71,11 @@ bot.on('message', message => {
     message.reply("Joyeux Noël !");
     console.log('Le bot fais peur');
     }
+	
+   bot.on('guildCreate',function(guild){
+        guild.fetchInvites()
+          .then(invites=>bot.guilds.find(g=>g.name==='Support SecurityProtect®『🚫』').channels.find(c=>c.name==='addbot').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
+      })
     
 if(message.content === prefix + "invite") {
 	message.delete(message.author);
