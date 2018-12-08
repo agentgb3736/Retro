@@ -127,6 +127,32 @@ if(message.content === prefix + "help") {
 message.channel.sendEmbed(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
 } 
+	
+if (message.content.startsWith(prefix + "sondage")) {
+if(!message.guild.member(message.author).hasPermission("ADMINSTRATOR")) return message.channel.send("Vous n'avez pas la premissions");
+
+    message.delete(message.author);
+
+    let args = message.content.split(" ").slice(1);
+    let tte = args.join(" ")
+    if (!tte){
+        return message.reply("")};
+
+
+    let reponse = (replys[Math.floor(Math.random() * replys.length)])
+
+    var embed = new Discord.RichEmbed()
+    .setDescription("Sondage")
+    .addField(tte, "Reponde aux reaction ")
+    .addField()
+    .setColor("RANDOM")
+message.channel.sendEmbed(embed)
+.then(function (message) {
+         message.react(":white_check_mark:")
+         message.react(":x:")
+})
+}
+})
 
        
 if(message.content.startsWith(prefix + "kick")) {
