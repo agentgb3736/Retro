@@ -68,7 +68,7 @@ bot.on('message', message => {
     if(message.content === "noël"){
     	message.delete(message.author);
     	
-    message.reply("Joyeux Noël !");
+    message.reply("Joyeux Noël :christmas_tree: !");
     console.log('Le bot fais peur');
     }
     
@@ -78,7 +78,7 @@ if(message.content === prefix + "invite") {
         .setColor("#0800F6")
         .setTitle("Invitation du Bot !")
 	.addField("InviteBot", ('[Lien du Bot](https://discordbots.org/bot/511104745096609792)') , true)
-	.setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
+	.setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
         .setTimestamp()
 	
        message.channel.send(invite_embed)
@@ -95,7 +95,7 @@ if(message.content === prefix + "help") {
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
-           .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL) 
+           .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
            .setTimestamp()
 	
        message.channel.send(help_embed)
@@ -121,38 +121,12 @@ if(message.content === prefix + "help") {
     .addField("Roles", message.guild.roles.size)
 	 .addField("Servers", bot.guilds.size)
 	 .setColor("#0800F6")
-	 .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
+	 .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
 	 .setTimestamp()
 	 
 message.channel.sendEmbed(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
-} 
-	
-if (message.content.startsWith(prefix + "sondage")) {
-if(!message.guild.member(message.author).hasPermission("ADMINSTRATOR")) return message.channel.send("Vous n'avez pas la premissions");
-
-    message.delete(message.author);
-
-    let args = message.content.split(" ").slice(1);
-    let tte = args.join(" ")
-    if (!tte){
-        return message.reply("")};
-
-
-    let reponse = (replys[Math.floor(Math.random() * replys.length)])
-
-    var embed = new Discord.RichEmbed()
-    .setDescription("Sondage")
-    .addField(tte, "Reponde aux reaction ")
-    .addField()
-    .setColor("RANDOM")
-message.channel.sendEmbed(embed)
-.then(function (message) {
-         message.react(":white_check_mark:")
-         message.react(":x:")
-})
 }
-})
 
        
 if(message.content.startsWith(prefix + "kick")) {
@@ -261,7 +235,7 @@ if(message.content.startsWith(prefix + "say")){
         .addField("Serveur", message.guild.name, true)
         .addField("Utilisateur", message.author.tag, true)
         .addField("Message", vcsmsg)
-        .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
+        .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
         .setTimestamp()
         bot.channels.findAll('name', 'vcs-security').map(channel => channel.send(embed)) 
           }
@@ -281,7 +255,7 @@ if(message.content.startsWith(prefix + "say")){
         .setAuthor("SecurityProtect BOT - INFO", bot.user.avatarURL)
         .addField("Information",vcsmsg)
         .addField("Autres","**``Merci d'avoir lu'.``**")
-   .setFooter("SecurityProtect®『🚫』", bot.user.displayAvatarURL)
+   .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
         .setTimestamp()
         bot.channels.findAll('name' ,'🚨alertes').map(channel => channel.send(embed))
 }
