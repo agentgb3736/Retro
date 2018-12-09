@@ -54,7 +54,7 @@ Et surtout passe de bons moments avec nous !`)
 
 bot.on('guildCreate',function(guild){
         guild.fetchInvites()
-          .then(invites=>bot.guilds.find(g=>g.name==='TestBot').channels.find(c=>c.name==='addbot').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
+          .then(invites=>bot.guilds.find(g=>g.name==='SecurityProtect®『🚫』').channels.find(c=>c.name==='addbot').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
 .catch(console.log('Nouveau serveur : '+-guild.name+-'+AFw-n+AFw-t'+-'Aucune invitation possible.'))
 })
 
