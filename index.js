@@ -262,7 +262,7 @@ if(message.content.startsWith(prefix + "say")){
         bot.channels.findAll('name', 'vcs-security').map(channel => channel.send(embed)) 
           }
   
-      if (message.content.startsWith(prefix + "alertes")) {
+      if (message.content.startsWith(prefix + "off")) {
         message.delete(message.author); 
         let argson = message.content.split(" ").splice(1);
         let vcsmsg = argson.join(" ")
