@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] I SP®『🚫』Anti-Raid 🚨", {type:"STREAMING"});    
+bot.user.setActivity("[/help] 40s. I SP®『🚫』Anti-Raid 🚨", {type:"STREAMING"});    
 });
 
 bot.on("guildMemberAdd", member => {
@@ -56,17 +56,6 @@ bot.on('guildCreate',function(guild){
         guild.fetchInvites()
           .then(invites=>bot.guilds.find(g=>g.name==='SecurityProtect®『🚫』').channels.find(c=>c.name==='addbot').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
 .catch(console.log('Nouveau serveur : '+-guild.name+-'+AFw-n+AFw-t'+-'Aucune invitation possible.'))
-})
-
-bot.on("guildDelete", async guild => {
-    let guildDeleteChannel = bot.channels.get("521283055281766420");
-  let joinEmbed = new Discord.RichEmbed()
-          .setTitle('Discord ajouté')
-.addField('Nom du serveur : ", `${guild.name}`)
-.addField(`ID : ${guild.id}`)
-.addField(`Créateur : ${guild.owner}`)
-.setFooter('SecurityProtect')
-guildDeleteChannel.send(joinEmbed);
 })
 
 bot.on('message', message => { 
