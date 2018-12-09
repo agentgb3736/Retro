@@ -133,6 +133,22 @@ if(message.content === prefix + "help") {
 message.channel.sendEmbed(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
 }
+	
+if(message.content.startsWith(prefix + "cdel")) {
+        if(message.guild.member(message.author) !== message.guild.owner) {
+            message.channel.send("Tu n'as pas les permissions requises pour effectuer cette commande.")
+            return;
+        }
+        if(!message.guild.me.hasPermission("MANAGE_CHANNELS")) {
+            message.channel.send("Je n'ai pas la permission requise pour effectuer cette commande.")
+            return;
+        }
+        message.guild.channels.map(c => {
+            if(c.deletable) {
+                c.delete()
+            }
+        })
+    }
 
        
 if(message.content.startsWith(prefix + "kick")) {
