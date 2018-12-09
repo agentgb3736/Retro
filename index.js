@@ -18,7 +18,7 @@ bot.on("guildMemberAdd", member => {
   const bvn = member.guild.channels.find(m => m.name === "『📩』bienvenue")
   if(!bvn) return;
   const embed = new Discord.RichEmbed()
-  .setColor('#0800F6')
+  .setColor('#44FD01')
   .setAuthor(member.user.tag, member.user.avatarURL)
   .setTitle("Arrivée d'un nouvel utilisateur")
   .addField("Un nouvel utilisateur vient d'arriver", `Il sagit de [${member.user.tag}](https://discordapp.com/)`, true)
@@ -34,7 +34,7 @@ bot.on("guildMemberRemove", member => {
   const bvn = member.guild.channels.find(m => m.name === "『📩』bienvenue")
   if(!bvn) return;
   const embed = new Discord.RichEmbed()
-  .setColor('#0800F6')
+  .setColor('#FD0101')
   .setAuthor(member.user.tag, member.user.avatarURL)
   .setTitle("Départ d'un nouvel utilisateur")
   .addField("Un nouvel utilisateur vient de partir", `Il s'agit de [${member.user.tag}](https://discordapp.com/)`, true)
