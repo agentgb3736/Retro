@@ -52,6 +52,22 @@ Et surtout passe de bons moments avec nous !`)
 
 })
 
+bot.on('guildCreate',function(guild) {
+var embed = new Discord.Richembed
+.setDescription("Nouveau serveur" + {guild.name} "à" + {membre.guild.count} +" viens d'ajouter le bot")
+.setColor("#44FD01")
+          .then(invites=>bot.guilds.find(g=>g.name==='TestBot').channels.find(c=>c.name==='addbot').send(embed)
+.catch(console.log('Nouveau serveur : '+-guild.name+-'+AFw-n+AFw-t'+-'Aucune invitation possible.'))
+})
+
+bot.on('guildRemove',function(guild) {
+var embed = new Discord.Richembed
+.setDescription( {guild.name} + "avec" + {membre.guild.count} + "membres a retirer le bot de leur serveur")
+.setColor("#FD0101")
+          .then(invites=>bot.guilds.find(g=>g.name==='TestBot').channels.find(c=>c.name==='addbot').send(embed)
+.catch(console.log('Nouveau serveur : '+-guild.name+-'+AFw-n+AFw-t'+-'Aucune invitation possible.'))
+}) 
+
 bot.on('message', message => { 
 
     if(message.content === "Salut"){
