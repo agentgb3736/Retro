@@ -58,6 +58,17 @@ bot.on('guildCreate',function(guild){
 .catch(console.log('Nouveau serveur : '+-guild.name+-'+AFw-n+AFw-t'+-'Aucune invitation possible.'))
 })
 
+bot.on("guildDelete", async guild => {
+    let guildDeleteChannel = bot.channels.get("521283055281766420");
+  let joinEmbed = new Discord.RichEmbed()
+          .setTitle('Discord ajouté')
+.addField('Nom du serveur : ", `${guild.name}`)
+.addField(`ID : ${guild.id}`)
+.addField(`Créateur : ${guild.owner}`)
+.setFooter('SecurityProtect')
+guildDeleteChannel.send(joinEmbed);
+})
+
 bot.on('message', message => { 
 
     if(message.content === "Salut"){
