@@ -53,7 +53,7 @@ Et surtout passe de bons moments avec nous !`)
 })
 
 bot.on("guildCreate", (guild) => {
-    let guildDeleteChannel = bot.channels.find("id", "521283055281766420").send(joinEmbed)
+   let guildCreateChannel = bot.channels.get("521283055281766420").send(joinEmbed)
   let joinEmbed = new Discord.RichEmbed()
           .setTitle('Discord ajouté')
 .addField(`Discord : ${guild.name}`)
@@ -66,7 +66,7 @@ guildCreateChannel.send(joinEmbed);
 }
 
 bot.on("guildDelete", (guild) => {
-    let guildDeleteChannel = bot.channels.find("id", "521283055281766420").send(deleteEmbed)
+   let guildDeleteChannel = bot.channels.get("521283055281766420").send(deleteEmbed)
   let deleteEmbed = new Discord.RichEmbed()
           .setTitle('Discord Quitter ')
 .addField(`Discord : ${guild.name}`)
