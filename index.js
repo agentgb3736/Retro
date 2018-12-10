@@ -102,7 +102,7 @@ if(message.content === prefix + "help") {
            .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
            .addField("__**Anti-Raid**__ - (0)", "``En développement``")
-           .setFooter("SecurityProtect®/!\『🚫』 V.3.1.0", bot.user.displayAvatarURL) 
+           .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
            .setTimestamp()
       message.channel.send(help_embed)
        console.log("Un utilisateur a effectué la commande d'aide !") 
