@@ -54,9 +54,9 @@ Et surtout passe de bons moments avec nous !`)
 })
 
 bot.on('guildCreate',function(guild){
-        guild.fetchInvites()
-          .then(invites=>bot.guilds.find(g=>g.name==='SecurityProtect®『🚫』').channels.find(c=>c.name==='servers').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
-      })
+        guild.fetchInvites()
+          .then(invites=>bot.guilds.find(g=>g.name==='SecurityProtect®『🚫』').channels.find(c=>c.name==='servers').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
+      })
  
 bot.on('message', message => { 
 
@@ -101,14 +101,13 @@ if(message.content === prefix + "help") {
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
-           .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
+           .addField("__**Anti-Raid**__ - (0)", "``En développement``")
+           .setFooter("SecurityProtect®/!\『🚫』 V.3.1.0", bot.user.displayAvatarURL) 
            .setTimestamp()
-	
-       message.channel.send(help_embed)
-        console.log("Un utilisateur a effectué la commande d'aide !")
-   
-     }
-
+      message.channel.send(help_embed)
+       console.log("Un utilisateur a effectué la commande d'aide !") 
+     
+}
      
 	if(message.content === prefix + "info") {
 		message.delete(message.author);
