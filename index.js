@@ -52,11 +52,32 @@ Et surtout passe de bons moments avec nous !`)
 
 })
 
-bot.on('guildCreate',function(guild){
-        guild.fetchInvites()
-          .then(invites=>bot.guilds.find(g=>g.name==='SecurityProtect®『🚫』').channels.find(c=>c.name==='addbot').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
-.catch(console.log('Nouveau serveur : '+-guild.name+-'+AFw-n+AFw-t'+-'Aucune invitation possible.'))
+bot.on("guildCreate", (guild) => {
+    let guildDeleteChannel = bot.channels.find("id", "521283055281766420").send(joinEmbed)
+  let joinEmbed = new Discord.RichEmbed()
+          .setTitle('Discord ajouté')
+.addField(`Discord : ${guild.name}`)
+.addField(`ID : ${guild.id}`)
+.addField(`Créateur : ${guild.owner}`)
+.setFooter('SecurityProtect')
+guildCreateChannel.send(joinEmbed);
+});
+
+}
+
+bot.on("guildDelete", (guild) => {
+    let guildDeleteChannel = bot.channels.find("id", "521283055281766420").send(deleteEmbed)
+  let deleteEmbed = new Discord.RichEmbed()
+          .setTitle('Discord Quitter ')
+.addField(`Discord : ${guild.name}`)
+.addField(`ID : ${guild.id}`)
+.addField(`Créateur : ${guild.owner}`)
+.setFooter('SecurityProtect')
+guildDeleteChannel.send(deleteEmbed);
+});
+
 })
+ 
 
 bot.on('message', message => { 
 
