@@ -11,7 +11,8 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("/help | Nouveau serveur : '+guild.name+'\n\t'+invites.first().url", {type:"STREAMING"});
+bot.user.setActivity("[/help] 45s. I SP®『🚫』Anti-Raid 🚨", {type:"WATCHING"}); 
+bot.user.setStatus('dnd')
 });
 
 bot.on("guildMemberAdd", member => {
