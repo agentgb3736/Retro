@@ -139,7 +139,7 @@ if(message.content === prefix + "rules") {
         var rules_embed = new Discord.RichEmbed()
         .setColor("#ED7F10")
         .setTitle("Voici le réglement !")
-        .addField("1.Utilisateurs", "1.Spam participation à raid.", " 2. Non respect des TOS de Discord __**Selfbots**__.", " 3. Abus de pouvoir. ", "4. Destruction de serveur.", "5.Harcelement __**DDOS,DOX**__ ", "6. Création de bot malveillant.", " 7. Pseudo incorect.")
+        .addField("1.Utilisateurs", "1.Spam participation à raid. 2. Non respect des TOS de Discord __**Selfbots**__. 3. Abus de pouvoir. 4. Destruction de serveur. 5.Harcelement __**DDOS,DOX**__ 6. Création de bot malveillant. 7. Pseudo incorect.")
         .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(rules_embed)
