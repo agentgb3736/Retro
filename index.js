@@ -102,7 +102,7 @@ if(message.content === prefix + "help") {
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
-           .addField("__**Anti-Raid**__ - (0)", "``En développement``")
+           .addField("__**Anti-Raid**__ - (1)", "``/rules``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
            .setTimestamp()
       message.channel.send(help_embed)
@@ -133,6 +133,18 @@ if(message.content === prefix + "help") {
 message.channel.sendEmbed(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
 }
+	
+if(message.content === prefix + "rules") {
+	
+        var rules_embed = new Discord.RichEmbed()
+        .setColor("#ED7F10")
+        .setTitle("Voici le réglement !")
+        .addField("1.Utilisateurs", "1.Spam participation à raid. 2. Non respect des TOS de Discord __**Selfbots**__. 3. Abus de pouvoir. 4. Destruction de serveur. 5.Harcelement __**DDOS,DOX**__ 6. Création de bot malveillant. 7. Pseudo incorect.")
+        .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
+        .setTimestamp()
+        message.channel.send(rules_embed)
+console.log("Commande effectue !")
+  }
 	
 if(message.content.startsWith(prefix + "cdel")) {
         if(message.guild.member(message.author) !== message.guild.owner) {
