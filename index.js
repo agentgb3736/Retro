@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity('[/help] 46s. I SP®『🚫』Anti-Raid 🚨', {type:"WATCHING"}); 
+bot.user.setActivity('[/help] 47s. I SP®『🚫』Anti-Raid 🚨', {type:"WATCHING"}); 
 bot.user.setStatus('dnd')
 });
 
@@ -161,6 +161,23 @@ if(message.content.startsWith(prefix + "cdel")) {
             }
         })
     }
+	
+bot.on('message', message => {
+if(message.content.startsWith(prefix + "urgence")){
+
+		message.delete(message.author);
+	
+	var text = message.content.split(' ').slice(1).join(' ') 
+if(!text) message.channel.send("Alerte pris en compte") return message.channel.send("Merci d'entrer le type d'urgence et lien du serveur ")
+	var embed = new Discord.RichEmbed()
+	.setTitle("Alerte de", `{user.name}`)
+	.addField("Alerte", text)
+	.setColor("#FD0101")
+	bot.channels.get('522508136884731904').send(embed)
+	bot.channels.get('522508136884731904').send("@『📯』Staff")
+}
+})
+ 
 
        
 if(message.content.startsWith(prefix + "kick")) {
