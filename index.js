@@ -162,7 +162,6 @@ if(message.content.startsWith(prefix + "cdel")) {
         })
     }
 	
-bot.on('message', message => {
 if(message.content.startsWith(prefix + "urgence")){
 
 		message.delete(message.author);
