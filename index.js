@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity('[/help] 47s. I SP®『🚫』Anti-Raid 🚨', {type:"WATCHING"}); 
+bot.user.setActivity('[/help] 48s. I SP®『🚫』Anti-Raid 🚨', {type:"WATCHING"}); 
 bot.user.setStatus('dnd')
 });
 
