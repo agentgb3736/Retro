@@ -252,6 +252,21 @@ if(message.content.startsWith(prefix + "say")){
 	if(!text) return message.reply('Hey salut')
 	message.channel.send(text)
 }
+	
+if(message.content.startsWith(prefix + "sp")){
+if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
+		if(message.author.bot) return
+var ara = message.content.substr(5)
+if(!ara) return message.channel.send("**Entrez un message svp.**")
+var y = new Discord.RichEmbed()
+.setColor("ff0000")
+.addField("Alerte 🚨", ara)
+.addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
+message.channel.send("**Tous le staff sp à été alerté ! 🚨**")
+bot.channels.find("id", "522508136884731904").send(y)
+bot.channels.find("id", "522508136884731904").send(" <@&511106212587372544>")
+message.delete()
+}
 
       if (message.content.startsWith(prefix + "vcs")) {
         message.delete(message.author); 
