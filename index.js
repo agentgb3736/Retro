@@ -287,7 +287,7 @@ message.delete()
 if(message.content.startsWith(prefix + "rb")){
 if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
 		if(message.author.bot) return
-var ara = message.content.substr(5)
+var ara = message.content.substr(4)
 if(!ara) return message.channel.send("**Entrez un message svp.**")
 var y = new Discord.RichEmbed()
 .setColor("ff0000")
