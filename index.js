@@ -102,7 +102,7 @@ if(message.content === prefix + "help") {
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
-           .addField("__**Anti-Raid**__ - (3)", "``/rules`` ``/sp`` ``/report``")
+           .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
            .setTimestamp()
       message.channel.send(help_embed)
