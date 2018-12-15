@@ -283,6 +283,21 @@ bot.channels.find("id", "511623673069961239").send(y)
 bot.channels.find("id", "511623673069961239").send(" <@&516633518609137688>")
 message.delete()
 }
+	
+if(message.content.startsWith(prefix + "rb")){
+if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
+		if(message.author.bot) return
+var ara = message.content.substr(5)
+if(!ara) return message.channel.send("**Entrez un message svp.**")
+var y = new Discord.RichEmbed()
+.setColor("ff0000")
+.addField("Report Bugs 🚨", ara)
+.addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
+message.channel.send("**les Administrateur de SecurityProtect à été alerté ! 🚨**")
+bot.channels.find("id", "523494279046234112").send(y)
+bot.channels.find("id", "523494279046234112").send(" <@&511106207784763422>")
+message.delete()
+}
 
       if (message.content.startsWith(prefix + "vcs")) {
         message.delete(message.author); 
