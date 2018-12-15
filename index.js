@@ -207,6 +207,7 @@ if(message.content.startsWith(prefix + "kick")) {
     }
 
     if(message.content.startsWith(prefix + "clear")) {
+	    message.delete(message.author)
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
 
         let args = message.content.split(" ").slice(1);
