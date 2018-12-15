@@ -279,7 +279,7 @@ var y = new Discord.RichEmbed()
 .addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
 message.channel.send("**Tous le staff sp à été alerté ! 🚨**")
 bot.channels.find("id", "511623673069961239").send(y)
-bot.channels.find("id", "511623673069961239").send(" <@&511106212587372544>")
+bot.channels.find("id", "511623673069961239").send(" <@&516633518609137688>")
 message.delete()
 }
 
