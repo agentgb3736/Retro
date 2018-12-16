@@ -298,34 +298,13 @@ bot.channels.find("id", "523494279046234112").send(y)
 bot.channels.find("id", "523494279046234112").send(" <@&511106207784763422>")
 message.delete()
 }
-
-      if (message.content.startsWith(prefix + "vcs")) {
-        message.delete(message.author); 
-        let argson = message.content.split(" ").splice(1);
-        let vcsmsg = argson.join(" ")
-        if(!message.guild.channels.find("name", "vcs-security")) return message.reply("Erreur, le channel vcs-security est introuvable");
-        if(message.channel.name !== "vcs-security") return message.reply("Commande à effectuer dans vcs-security");
-        if(!vcsmsg) return message.reply("Merci d'envoyer un message dans la globalité des discords");
-    
-        var replys = [];
-        let reponse = (replys[Math.floor(Math.random() * replys.length)])
-        var embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setAuthor("SecurityProtect BOT - VCS", bot.user.avatarURL)
-        .addField("Serveur", message.guild.name, true)
-        .addField("Utilisateur", message.author.tag, true)
-        .addField("Message", vcsmsg)
-        .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
-        .setTimestamp()
-        bot.channels.findAll('name', 'vcs-security').map(channel => channel.send(embed)) 
-          }
   
       if (message.content.startsWith(prefix + "off")) {
         message.delete(message.author); 
         let argson = message.content.split(" ").splice(1);
         let vcsmsg = argson.join(" ")
         if(!message.guild.channels.find("name", "vcs-security")) return message.reply("Erreur, le channel vcs-security est introuvable");
-        if(message.channel.name !== "vcs-security") return message.reply("Commande à effectuer dans 🚨alertes");
+        if(message.channel.name !== "vcs-security") return message.reply("Commande à effectuer dans vcs-security");
         if(!vcsmsg) return message.reply("Merci d'envoyer un message dans la globalité des discords");
     
         var replys = [];
@@ -337,6 +316,6 @@ message.delete()
         .addField("Autres","**``Merci d'avoir lu.``**")
    .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
         .setTimestamp()
-        bot.channels.findAll('name' ,'🚨alertes').map(channel => channel.send(embed))
+        bot.channels.findAll('name' ,'vcs-security').map(channel => channel.send(embed))
 }
   });
