@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 bot.on("ready", () => {
   console.log("Je suis prêt")
   
-bot.user.setActivity("[/help] 65s. I SP®『🚫』Anti-Raid 🚨", {type:"WATCHING"});  
+bot.user.setActivity("[/help] 64s. I SP®『🚫』Anti-Raid 🚨", {type:"WATCHING"});  
 bot.user.setStatus('dnd')  
 });
 
@@ -100,7 +100,7 @@ if(message.content === prefix + "help") {
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
-           .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
+           .addField("__**Fun**__ - (2)", "``/say`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
@@ -324,8 +324,8 @@ message.delete()
         message.delete(message.author); 
         let argson = message.content.split(" ").splice(1);
         let vcsmsg = argson.join(" ")
-        if(!message.guild.channels.find("name", "🚨alertes")) return message.reply("Erreur, le channel 🚨alertes est introuvable");
-        if(message.channel.name !== "🚨alertes") return message.reply("Commande à effectuer dans 🚨alertes");
+        if(!message.guild.channels.find("name", "vcs-security")) return message.reply("Erreur, le channel 🚨alertes est introuvable");
+        if(message.channel.name !== "vcs-security") return message.reply("Commande à effectuer dans 🚨alertes");
         if(!vcsmsg) return message.reply("Merci d'envoyer un message dans la globalité des discords");
     
         var replys = [];
