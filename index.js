@@ -324,7 +324,7 @@ message.delete()
         message.delete(message.author); 
         let argson = message.content.split(" ").splice(1);
         let vcsmsg = argson.join(" ")
-        if(!message.guild.channels.find("name", "vcs-security")) return message.reply("Erreur, le channel 🚨alertes est introuvable");
+        if(!message.guild.channels.find("name", "vcs-security")) return message.reply("Erreur, le channel vcs-security est introuvable");
         if(message.channel.name !== "vcs-security") return message.reply("Commande à effectuer dans 🚨alertes");
         if(!vcsmsg) return message.reply("Merci d'envoyer un message dans la globalité des discords");
     
