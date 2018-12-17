@@ -103,6 +103,7 @@ if(message.content === prefix + "help") {
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (2)", "``/say`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite``") 
+	   .addField("__**Owner du Serveur**__ - (2)", "``/cdel`` ``/kall``")
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
            .setTimestamp()
@@ -166,7 +167,7 @@ if(message.content.startsWith(prefix + "cdel")) {
 
     if (message.content.startsWith(prefix + 'kall')) {
 
-       if(message.guild.member(message.author) !== message.guild.owner) {
+        if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
             message.channel.send("**❌ Vous n'avez pas la permission.**")
             return;
         }
