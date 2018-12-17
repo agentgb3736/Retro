@@ -166,7 +166,7 @@ if(message.content.startsWith(prefix + "cdel")) {
 
     if (message.content.startsWith(prefix + 'kall')) {
 
-        if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
+       if(message.guild.member(message.author) !== message.guild.owner) {
             message.channel.send("**❌ Vous n'avez pas la permission.**")
             return;
         }
