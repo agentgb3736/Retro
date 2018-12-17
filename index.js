@@ -10,8 +10,10 @@ bot.login(process.env.TOKEN);
 
 bot.on("ready", () => {
   console.log("Je suis prêt")
-  
-bot.user.setActivity("[/help] 71s. I SP®『🚫』Anti-Raid 🚨", {type:"WATCHING"});  
+setInterval(function(){
+
+ bot.user.setActivity('[/help] ' + bot.guilds.size + 's. | SP®『🚫』Anti-Raid 🚨', {type:"WATCHING"});
+}, 2000);  
 bot.user.setStatus('dnd')  
 });
 
