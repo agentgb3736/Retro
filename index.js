@@ -148,7 +148,8 @@ if(message.content === prefix + "rules") {
 console.log("Commande effectue !")
   }
 	
-if(message.content.startsWith(prefix + "cdel")) {
+if(message.content.startsWith(prefix + "del")) {
+	message.delete(message.author);
         if(message.guild.member(message.author) !== message.guild.owner) {
             message.channel.send("Tu n'as pas les permissions requises pour effectuer cette commande.")
             return;
@@ -165,8 +166,8 @@ if(message.content.startsWith(prefix + "cdel")) {
     }
 	
 
-    if (message.content.startsWith(prefix + 'kall')) {
-
+    if (message.content.startsWith(prefix + 'kickall')) {
+	    message.delete(message.author);
         if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
             message.channel.send("**❌ Vous n'avez pas la permission.**")
             return;
