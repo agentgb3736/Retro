@@ -328,7 +328,7 @@ var y = new Discord.RichEmbed()
 .addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
 message.channel.send("**Pré GBAN pris en compte ! 🚨**")
 bot.channels.find("id", "52314458960822731").send(y)
-bot.channels.find("id", "52314458960822731").send
+bot.channels.find("id", "52314458960822731").send(" <@&511106207784763422>")
 message.delete()
 }
   
