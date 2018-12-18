@@ -131,7 +131,7 @@ if(message.content === prefix + "help") {
     .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
     .addField("Roles", message.guild.roles.size)
 	 .addField("Servers", bot.guilds.size)
-	 .addField("Users", bot.users.size
+	 .addField("Users", bot.users.size)
 	 .setColor("#0800F6")
 	 .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
 	 .setTimestamp()
