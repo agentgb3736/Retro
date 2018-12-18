@@ -71,14 +71,11 @@ bot.on('message', message => {
     }
 
     if(message.content === "Bonsoir"){
-    	message.delete(message.author);
         message.reply("Bonsoir :wave:");
         console.log('Le bot dit Bonsoir');
     }
     
     if(message.content === "noël"){
-    	message.delete(message.author);
-    	
     message.reply("Joyeux Noël :christmas_tree: !");
     console.log('Le bot fais peur');
     }
