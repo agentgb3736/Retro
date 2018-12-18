@@ -316,21 +316,6 @@ bot.channels.find("id", "523494279046234112").send(y)
 bot.channels.find("id", "523494279046234112").send(" <@&511106207784763422>")
 message.delete()
 }
-	
-if(message.content.startsWith(prefix + "pgban")){
-if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
-		if(message.author.bot) return
-var ara = message.content.substr(8)
-if(!ara) return message.channel.send("**Entrez un message svp.**")
-var y = new Discord.RichEmbed()
-.setColor("ff0000")
-.addField("__**Personne à GBAN**__", ara)
-.addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
-message.channel.send("**Pré GBAN pris en compte ! 🚨**")
-bot.channels.find("id", "52314458960822731").send(y)
-bot.channels.find("id", "52314458960822731").send(" <@&511106207784763422>")
-message.delete()
-}
   
       if (message.content.startsWith(prefix + "off")) {
         message.delete(message.author); 
