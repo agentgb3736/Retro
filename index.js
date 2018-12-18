@@ -8,13 +8,17 @@ var prefix = "/";
 
 bot.login(process.env.TOKEN);
 
-bot.on("ready", () => {
-  console.log("Je suis prêt")
-	
-bot.user.setActivity("#Go80Servs [/help] 72s. I SP®『🚫』Anti-Raid🚨", {type:"WATCHING"});    
-
-bot.user.setStatus('dnd') 
-});
+bot.on('ready', () => {
+    console.log('Je suis prêt !');
+    setInterval(changing_status, 1000);
+  
+    function changing_status() {
+      let status = ["Protège ${client.guilds.size} serveurs", "/help voir les commandes", "Crée par _ClesiriusPE _「🎄」",  "${client.users.size} utilisateurs protégés"]
+      let random = status[Math.floor(Math.random() * status.length)]
+      bot.user.setActivity(random)
+  }
+  
+  });
 
 bot.on("guildMemberAdd", member => {
   const bvn = member.guild.channels.find(m => m.name === "『📩』bienvenue")
