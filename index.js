@@ -10,7 +10,7 @@ bot.login(process.env.TOKEN);
 
 bot.on('ready', () => {
     console.log('Je suis prêt !');
-    setInterval(changing_status, 2000);
+    setInterval(changing_status, 3000);
   
     function changing_status() {
       let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", "/help /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Non-Actif."]
