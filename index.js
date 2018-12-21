@@ -13,7 +13,7 @@ bot.on('ready', () => {
     setInterval(changing_status, 2000);
   
     function changing_status() {
-      let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", {bot.users.size}+"utilisateurs proteger", "/help /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Non-Actif."]
+      let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", "{bot.users.size}"utilisateurs proteger", "/help /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Non-Actif."]
       let random = status[Math.floor(Math.random() * status.length)]
       bot.user.setActivity(random)
   }
