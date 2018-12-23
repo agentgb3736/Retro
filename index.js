@@ -65,15 +65,13 @@ bot.on('guildCreate',function(guild){
 
 bot.on('message', message => { 
 
-    if(message.content === "Bonjour"){
-    	message.delete(message.author);
-        message.reply("Salut");
+    if(message.content === "Salut"){
+        message.reply("Hey :511234738657427507:");
         console.log('Le bot dit Bonjour');
     }
 
     if(message.content === "Bonsoir"){
-    	message.delete(message.author);
-        message.reply("Bonsoir :wave:");
+        message.reply("Bonsoir :495929501273030675:");
         console.log('Le bot dit Bonsoir');
     }
     
@@ -88,9 +86,10 @@ bot.on('message', message => {
 if(message.content === prefix + "invite") {
 	message.delete(message.author);
         var invite_embed = new Discord.RichEmbed()
-        .setColor("#0800F6")
+        .setColor("RANDOM")
         .setTitle("Invitation du Bot !")
 	    .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
+	.addField("InviteBot", ('[SecurityProtect®『🚫』](https://discordapp.com/oauth2/authorize?client_id=511104745096609792&scope=bot&permissions=2146958847)') , true)
 	    .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
         .setTimestamp()
         message.channel.send(invite_embed)
@@ -111,12 +110,12 @@ if(message.content === prefix + "partners") {
 if(message.content === prefix + "help") {	
 	message.delete(message.author); 
 	var help_embed = new Discord.RichEmbed() 
-           .setColor("#0800F6") 
+           .setColor("RANDOM") 
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
-           .addField("__**Fun**__ - (3)", "``/say`` ``/8ball``") 
-           .addField("__**Autres**__ - (2)", "``/info`` ``/invite`` ``/partners``") 
+           .addField("__**Fun**__ - (2)", "``/say`` ``/8ball``") 
+           .addField("__**Autres**__ - (3)", "``/info`` ``/invite`` ``/partners``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
            .setTimestamp()
@@ -143,7 +142,7 @@ if(message.content === prefix + "help") {
      .addField("Roles", message.guild.roles.size)
 	 .addField("Servers", bot.guilds.size)
      .addField("Users", bot.users.size)
-     .setColor("#0800F6")
+     .setColor("RANDOM")
      .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
 	 .setTimestamp()
 	 
