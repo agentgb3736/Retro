@@ -108,7 +108,9 @@ if(message.content === prefix + "partners") {
         message.channel.send(partner_embed)
 }
     
-if(message.content === prefix + "help") {	message.delete(message.author); var help_embed = new Discord.RichEmbed() 
+if(message.content === prefix + "help") {	
+	message.delete(message.author); 
+	var help_embed = new Discord.RichEmbed() 
            .setColor("#0800F6") 
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
@@ -139,6 +141,7 @@ if(message.content === prefix + "help") {	message.delete(message.author); var he
      .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
      .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
      .addField("Roles", message.guild.roles.size)
+	 .addField("Servers", bot.guilds.size)
      .addField("Users", bot.users.size)
      .setColor("#0800F6")
      .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
