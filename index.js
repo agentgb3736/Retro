@@ -66,12 +66,12 @@ bot.on('guildCreate',function(guild){
 bot.on('message', message => { 
 
     if(message.content === "Salut"){
-        message.reply("Hey :511234738657427507:");
+        message.reply("Hey <:pandahappy:511234738657427507>");
         console.log('Le bot dit Bonjour');
     }
 
     if(message.content === "Bonsoir"){
-        message.reply("Bonsoir :495929501273030675:");
+        message.reply("Bonsoir <:PandaSnake:495929501273030675>");
         console.log('Le bot dit Bonsoir');
     }
     
