@@ -113,7 +113,7 @@ if(message.content === prefix + "help") {	message.delete(message.author); var he
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
-           .addField("__**Fun**__ - (3)", "``/say`` ``/vcs`` ``/8ball``") 
+           .addField("__**Fun**__ - (3)", "``/say`` ``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/invite`` ``/partners``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
