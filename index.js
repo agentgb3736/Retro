@@ -275,15 +275,6 @@ message.channel.sendEmbed(bembed)
 
 }
 
-if(message.content.startsWith(prefix + "say")){
-	
-		message.delete(message.author);
-	
-	var text = message.content.split(' ').slice(1).join(' ')
-	if(!text) return message.reply('Hey salut')
-	message.channel.send(text)
-}
-
 if(message.content.startsWith(prefix + "sp")){
     if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
             if(message.author.bot) return
