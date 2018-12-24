@@ -114,7 +114,7 @@ if(message.content === prefix + "help") {
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
-           .addField("__**Fun**__ - (2)", "``/say`` ``/8ball``") 
+           .addField("__**Fun**__ - (1)", "``/8ball``") 
            .addField("__**Autres**__ - (3)", "``/info`` ``/invite`` ``/partners``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
