@@ -92,7 +92,7 @@ bot.on('message', message => {
 if(message.content === prefix + "help") {	
     message.delete(message.author); 
     var help_embed = new Discord.RichEmbed() 
-           .setColor("#0800F6") 
+           .setColor("RANDOM") 
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
@@ -127,7 +127,7 @@ bot.on('message', message => {
      .addField("Roles", message.guild.roles.size)
      .addField("Users", bot.users.size)
      .addField("Servers", bot.guilds.size)
-     .setColor("#0800F6")
+     .setColor("RANDOM")
      .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
 	 .setTimestamp()
 	 
