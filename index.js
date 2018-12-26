@@ -11,7 +11,7 @@ bot.on('ready', () => {
     setInterval(changing_status, 3000);
   
     function changing_status() {
-      let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", "/help /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「🎄」On est le 26Déc", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Actif.", "「💪」13Commandes", "「👮」#SaveYourInternet"]
+      let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", "/help /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「🎄」On est le 26Déc", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Actif.", "「💪」13 Commandes", "「👮」#SaveYourInternet"]
       let random = status[Math.floor(Math.random() * status.length)]
       bot.user.setActivity(random)
   }
@@ -62,7 +62,7 @@ bot.on('guildCreate',function(guild){
       })
 
 bot.on('message', message => {
-    let blacklisted = ["fdp","connard","fils de pute","enculé","bite","enculer","porno","salope","pute","gros con","nique ta mère","nique ta mere","tg","con","ta gueule","ta geule"];
+    let blacklisted = ["fdp","connard","fils de pute","enculé","bite","enculer","porno","salope","pute","gros con","nique ta mère","nique ta mere","tg","con","ta gueule","ta geule","sex"];
         let foundInText = false;
         for (var i in blacklisted) {
             if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
@@ -70,7 +70,8 @@ bot.on('message', message => {
     
         if(foundInText) {
             message.delete();
-            message.channel.send("Ce mot à été enlevé :warning:Attention à ton langage !");
+            message.channel.send("Ce mot à été enlevé :warning: Attention à ton langage !");
+		message.delete()
         }
     })
 
