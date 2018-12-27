@@ -83,7 +83,7 @@ if(message.content === prefix + "help") {
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
-           .addField("__**Fun**__ - (1)", "``/8ball`` ``/say``") 
+           .addField("__**Fun**__ - (1)", "``/8ball``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/partners``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
@@ -233,7 +233,7 @@ if(message.content.startsWith(prefix + "kick")) {
 })
 
 bot.on('message', message => {
-if(message.content.startsWith(prefix + "say")){
+if(message.content.startsWith(prefix + "tell")){
 	
 		message.delete(message.author);
 	
