@@ -83,7 +83,7 @@ if(message.content === prefix + "help") {
            .setTitle("Voici la page d'aide !") 
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
-           .addField("__**Fun**__ - (1)", "``/8ball``") 
+           .addField("__**Fun**__ - (1)", "``/8ball`` ``/say``") 
            .addField("__**Autres**__ - (2)", "``/info`` ``/partners``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
@@ -230,6 +230,17 @@ if(message.content.startsWith(prefix + "kick")) {
             message.channel.send(`${args[0]} messages ont été surpprimés !:recycle:`).then(msg => msg.delete(2000));
         })
     }
+})
+
+bot.on('message', message => {
+if(message.content.startsWith(prefix + "say")){
+	
+		message.delete(message.author);
+	
+	var text = message.content.split(' ').slice(1).join(' ')
+	if(!text) return message.reply('Hey salut')
+	message.channel.send(text)
+}
 })
         
     bot.on('message', message => {
