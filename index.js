@@ -61,20 +61,6 @@ bot.on('guildCreate',function(guild){
           .then(invites=>bot.guilds.find(g=>g.name==='SecurityProtect®『🚫』').channels.find(c=>c.name==='servers').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
       })
 
-bot.on('message', message => {
-    let blacklisted = ["fdp","connard","fils de pute","enculé","bite","enculer","porno","salope","pute","gros con","nique ta mère","nique ta mere","tg","con","ta gueule","ta geule","sex"];
-        let foundInText = false;
-        for (var i in blacklisted) {
-            if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-        }
-    
-        if(foundInText) {
-            message.delete();
-            message.channel.send("Ce mot à été enlevé :warning: Attention à ton langage !");
-		message.delete()
-        }
-    })
-
     bot.on('message', message => {
 if(message.content === prefix + "partners") {
     message.delete(message.author);
