@@ -8,7 +8,7 @@ var prefix = "/";
 
 bot.on('ready', () => {
     console.log('Je suis prêt !');
-    setInterval(changing_status, 3000);
+    setInterval(changing_status, 1000);
   
     function changing_status() {
       let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", "/help & /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「🎄」On est le 27 Déc", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Actif.", "「💪」13 Commandes", "「👮」#SaveYourInternet"]
