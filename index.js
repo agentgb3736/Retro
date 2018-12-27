@@ -221,7 +221,7 @@ if(message.content.startsWith(prefix + "kick")) {
 
     bot.on('message', message => {
     if(message.content.startsWith(prefix + "clear")) {
-        if(!message.guild.member(message.author).hasPermission("SEND_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
+        if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
 
         let args = message.content.split(" ").slice(1);
 
