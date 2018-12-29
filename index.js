@@ -141,7 +141,7 @@ console.log("Commande effectue !")
 bot.on('message', message => {
 if(message.content.startsWith(prefix + "cdel")) {
 	message.delete(message.author);
-        if(message.guild.member(message.author) !== message.guild.owner) {
+       if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
             message.channel.send("Tu n'as pas les permissions requises pour effectuer cette commande.")
             return;
         }
