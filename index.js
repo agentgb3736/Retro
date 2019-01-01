@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const weather = require('weather-js');
-
 
 var prefix = "/";
 
@@ -192,35 +190,7 @@ if(message.content.startsWith(prefix + "cdel")) {
     };
 })
 
-bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
-    if (message.content.startsWith(prefix + 'weather')) {
-        message.delete(message.author);
-  weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
-  
-    if(!result) return message.channel.send("Merci de préciser votre ville");
-      
-          var current = result[0].current;
-          var location = result[0].location;
-    
-          var embed = new Discord.RichEmbed()
-              .setDescription(`**${current.skytext}**`)
-              .setAuthor(`Temps pour ${current.observationpoint}`)
-              .setThumbnail(current.imageUrl)
-              .setColor("RANDOM")
-              .addField('Plage horaire ',`UTC${location.timezone}`, false)
-              .addField('Température ',`${current.temperature} °C`, false)
-              .addField('Ressenti ', `${current.feelslike} °C`, false)
-              .addField('Vents ',current.winddisplay, false)
-              .addField('Humidité', `${current.humidity}%`, false)
-              .setFooter("Weather |")
-              .setTimestamp();
-               message.channel.send(embed);
- })
- };
-})
+
 
 bot.on('message', message => {
 let messageArray = message.content.split(' ');
