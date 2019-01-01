@@ -62,6 +62,9 @@ bot.on('guildCreate',function(guild){
       })
 
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content === prefix + "partners") {
     message.delete(message.author);
     var partner_embed = new Discord.RichEmbed()
@@ -76,6 +79,9 @@ if(message.content === prefix + "partners") {
 })
     
 bot.on('message', message => {
+	let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content === prefix + "help") {	
     message.delete(message.author); 
     var help_embed = new Discord.RichEmbed() 
@@ -84,7 +90,7 @@ if(message.content === prefix + "help") {
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (1)", "``/8ball``") 
-           .addField("__**Autres**__ - (2)", "``/info`` ``/partners``") 
+           .addField("__**Autres**__ - (2)", "``/info`` ``/partners`` ``/weather`` ``/ping``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
            .addField("Invite", ('[SecurityProtect®『🚫』](https://discordapp.com/oauth2/authorize?client_id=511104745096609792&scope=bot&permissions=2146958847)') , true)
@@ -97,6 +103,9 @@ if(message.content === prefix + "help") {
 })
 
 bot.on('message', message => {
+	let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 	if(message.content === prefix + "info") {
 		message.delete(message.author);
 	 var info_embed = new Discord.RichEmbed()
@@ -124,6 +133,9 @@ message.channel.sendEmbed(info_embed)
 })
 
 bot.on('message', message => {
+	let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content === prefix + "rules") {
 	
     var rules_embed = new Discord.RichEmbed()
@@ -139,6 +151,9 @@ console.log("Commande effectue !")
 })
 
 bot.on('message', message => {
+	let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "cdel")) {
 	message.delete(message.author);
        if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
@@ -158,6 +173,9 @@ if(message.content.startsWith(prefix + "cdel")) {
 })
 	
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
     if (message.content.startsWith(prefix + 'kall')) {
 	    message.delete(message.author);
         if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
@@ -171,8 +189,68 @@ if(message.content.startsWith(prefix + "cdel")) {
         }});
     };
 })
+
+bot.on('message', message => {
+    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
+    if (message.content.startsWith(prefix + 'weather')) {
+        message.delete(message.author);
+  weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
+  
+    if(!result) return message.channel.send("Merci de préciser votre ville");
+      
+          var current = result[0].current;
+          var location = result[0].location;
+    
+          var embed = new Discord.RichEmbed()
+              .setDescription(`**${current.skytext}**`)
+              .setAuthor(`Temps pour ${current.observationpoint}`)
+              .setThumbnail(current.imageUrl)
+              .setColor("RANDOM")
+              .addField('Plage horaire ',`UTC${location.timezone}`, false)
+              .addField('Température ',`${current.temperature} °C`, false)
+              .addField('Ressenti ', `${current.feelslike} °C`, false)
+              .addField('Vents ',current.winddisplay, false)
+              .addField('Humidité', `${current.humidity}%`, false)
+              .setFooter("Weather |")
+              .setTimestamp();
+               message.channel.send(embed);
+ })
+ };
+})
+
+bot.on('message', message => {
+let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
+    if(message.content.startsWith(prefix + "ping")) {
+
+        let botIcon = bot.user.displayAvatarURL
+    
+          let embed = new Discord.RichEmbed()
+    
+           .setDescription('Latence des messages du bot')
+    
+           .setColor('RANDOM')
+    
+           .setThumbnail(botIcon) 
+    
+           .addField("Latence avec l'API de Discord", bot.ping + 'ms')
+    
+           .setFooter("Ping")
+    
+           .setTimestamp();
+    
+          return message.channel.send(embed);
+    
+        };
+    })
       
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permissions !");
 
@@ -196,6 +274,9 @@ if(message.content.startsWith(prefix + "kick")) {
 })
 
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
     if(message.content.startsWith(prefix + "ban")) {
         if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("Vous n'avez pas la premissions");
 
@@ -220,6 +301,9 @@ if(message.content.startsWith(prefix + "kick")) {
 })
 
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
     if(message.content.startsWith(prefix + "clear")) {
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
 
@@ -233,6 +317,9 @@ if(message.content.startsWith(prefix + "kick")) {
 })
 
 bot.on('message', message => {
+	let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "tell")){
 	
 		message.delete(message.author);
@@ -244,6 +331,9 @@ if(message.content.startsWith(prefix + "tell")){
 })
         
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if (message.content.startsWith(prefix + "8ball")) {
 	
 	message.delete(message.author);
@@ -273,6 +363,9 @@ message.channel.sendEmbed(bembed)
 })
 
 bot.on('message', message => {
+	let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "sp")){
     if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
             if(message.author.bot) return
@@ -291,6 +384,9 @@ if(message.content.startsWith(prefix + "sp")){
 })
         
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
         if(message.content.startsWith(prefix + "report")){
     if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
             if(message.author.bot) return
@@ -309,6 +405,9 @@ if(message.content.startsWith(prefix + "sp")){
 })
         
     bot.on('message', message => {
+	    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
         if(message.content.startsWith(prefix + "rb")){
         if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
                 if(message.author.bot) return
