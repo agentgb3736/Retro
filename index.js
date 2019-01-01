@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
+const weather = require('weather-js');
+
 
 var prefix = "/";
 
