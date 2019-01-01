@@ -90,7 +90,7 @@ if(message.content === prefix + "help") {
            .addField("__**Modération**__ - (3)", "``/clear`` ``/mute`` ``/unmute``") 
            .addField("__**Administration**__ - (2)", "``/ban`` ``/kick``") 
            .addField("__**Fun**__ - (1)", "``/8ball``") 
-           .addField("__**Autres**__ - (2)", "``/info`` ``/partners`` ``/weather`` ``/ping``") 
+           .addField("__**Autres**__ - (2)", "``/info`` ``/partners`` ``/ping``") 
            .addField("__**Anti-Raid**__ - (4)", "``/rules`` ``/sp`` ``/report`` ``/rb``")
            .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
            .addField("Invite", ('[SecurityProtect®『🚫』](https://discordapp.com/oauth2/authorize?client_id=511104745096609792&scope=bot&permissions=2146958847)') , true)
