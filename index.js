@@ -59,11 +59,6 @@ Et surtout passe de bons moments avec nous !`)
 
 })
 
-bot.on('guildCreate',function(guild){
-            guild.fetchInvites()
-              .then(invites=>bot.guilds.find(g=>g.name==='SecurityBot').channels.find(c=>c.name==='servers').send('Nouveau serveur : '+guild.name+'\n\t'+invites.first().url))
-          })
-
         
     bot.on('message', message => {
         let messageArray = message.content.split(' ');
@@ -113,7 +108,7 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
 	if(message.content === prefix + "info") {
 		message.delete(message.author);
-	 var info_embed = new Discord.RichEmbed()
+		var info_embed = new Discord.RichEmbed()
 	 .setTitle("Information Discord")
 	 .addField("Nom du discord", message.guild.name)
 	 .addField("ID", message.guild.id)
@@ -147,7 +142,8 @@ if(message.content === prefix + "ui") {
     .addField("ID",  `__${message.author.id}__`)
     .addField("Username", `${message.author.username}`)
     .addField("Crée Le", `${message.author.createdAt}`)
-    .addField("Gban", "En développement")
+    .addField("Tu l'as rejoin le", `${message.member.joinedAt}`)
+    .addField("Gban", "``En développement``")
     .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
     .setTimestamp()
     message.channel.send(ui_embed)
