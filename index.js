@@ -14,7 +14,7 @@ bot.on('ready', () => {
     setInterval(changing_status, 1000);
     function changing_status() {
 
-      let status = ["[🌌] /help | "+bot.guilds.size+"s.", "[🎊] Happy 2019! ", "[🌐]#Go110servs", "[💪]On compte sur vous"]
+      let status = ["[🌌] /help | "+bot.guilds.size+"s.", "[🎊] Happy 2019! ", "[🌐]#Go110servs", "[💪]On compte sur vous", "[👮]Protège "+bot.users.size+"users."]
       let random = status[Math.floor(Math.random() * status.length)]
       bot.user.setActivity(random)
 
