@@ -94,8 +94,8 @@ if(message.content === prefix + "help") {
     .setDescription("__**Liste des commandes disponible**__ [12]")
     .addField("•__**Administration**__ [2]", "``ban <user>``,``kick <user>``")
     .addField("•__**Modération**__ [3]", "``clear``,``mute``,``unmute``")
-    .addField("•__**Fun**__ [3]", "``8ball``,``tell``,``weather``")
-    .addField("•__**Utilitaires**__ [3]", "``stats``,``info``,``id``")
+    .addField("•__**Fun**__ [1]", "``8ball``")
+    .addField("•__**Utilitaires**__ [3]", "``stats``,``info``,``id``,``ui``")
     .addField("•__**Anti-Raid**__ [4]", "``sp``,``report``,``rb``,``rules``")
     .addField("• __** <> **__","``Obligatoire``")
     .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
@@ -132,6 +132,26 @@ bot.on('message', message => {
 	 
 message.channel.send(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
+}
+})
+
+bot.on('message', message => {
+    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
+if(message.content === prefix + "ui") {
+    message.delete(message.author);
+    var ui_embed = new Discord.RichEmbed()
+    .setColor("#ED7F10")
+    .setTitle("User-Info")
+    .addField("ID",  `__${message.author.id}__`)
+    .addField("Username", `${message.author.username}`)
+    .addField("Crée Le", `${message.author.createdAt}`)
+    .addField("Gban", "En développement")
+    .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
+    .setTimestamp()
+    message.channel.send(ui_embed)
+console.log("Commande effectue !")
 }
 })
 
