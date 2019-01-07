@@ -6,6 +6,8 @@ const weather = require('weather-js');
 
 const fs = require('fs');
 
+const antiRaid = JSON.parse(fs.readFileSync("./ar.json", "utf8"))
+
 var prefix = "/";
 
 
@@ -108,6 +110,8 @@ bot.on('message', message => {
     let args = messageArray.slice(1);
 	if(message.content === prefix + "info") {
 		message.delete(message.author);
+
+		
 		var info_embed = new Discord.RichEmbed()
 	 .setTitle("Information Discord")
 	 .addField("Nom du discord", message.guild.name)
@@ -127,6 +131,30 @@ bot.on('message', message => {
 	 
 message.channel.send(info_embed)
          console.log("Un utilisateur a effectuer la commande d'info discord!")  
+}
+})
+
+bot.on("message", message => {
+    let messageArray = message.content.split(' ');
+   let command = messageArray[0];
+    let args = messageArray.slice(1);
+    if(message.content.startsWith(prefix + "ar")) {
+        message.delete(message.author);
+    let userAR = message.mentions.users.first()
+    if(!antiRaid[userAR.id]) {
+        antiRaid[userAR.id] = {
+            sec: 0,
+        }
+    }
+
+    if(antiRaid[userAR.id].sec > 1) return message.reply("Cet utilisateur est déjà anti-raid !")
+    antiRaid[userAR.id].sec++
+
+   fs.writeFile("./ar.json", JSON.stringify(antiRaid), (err) => {
+        if(err) console.error(err)
+    })
+
+    message.reply(userAR.tag + " a bien été ajouté à l'anti-raid !")
 }
 })
 
