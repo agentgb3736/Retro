@@ -13,7 +13,7 @@ var prefix = "/";
 
 bot.on('ready', () => {
     console.log('Je suis prêt !');
-    setInterval(changing_status, 1000);
+        setInterval(changing_status, 1000);
     function changing_status() {
 
       let status = ["[🌌] /help | "+bot.guilds.size+"s.", "[🎊] Happy 2019! ", "[🌐]#Go110servs", "[💪]On compte sur vous", "[👮]Protège "+bot.users.size+"users."]
@@ -61,11 +61,7 @@ Et surtout passe de bons moments avec nous !`)
 
 })
 
-        
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content === prefix + "partners") {
     message.delete(message.author);
     var partner_embed = new Discord.RichEmbed()
@@ -78,11 +74,23 @@ if(message.content === prefix + "partners") {
         message.channel.send(partner_embed)
 }
 })
+
+bot.on('message',message => {
+    if(message.content === prefix + "bi") {
+var bot_embed = new Discord.RichEmbed()
+.setColor("RANDOM")
+.setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL)
+.setTimestamp()
+.setTitle("Bot-Info")
+.addField("•__**Nom D'utilisateur Bot:**__", bot.user.username)
+.addField("•__**Bot Discrim:**__", `#${bot.user.discriminator}`)
+.addField("•__**Bot ID:**__", bot.user.id)
+.addField("•__**Créé à:**__", bot.user.createdAt)
+message.channel.send(bot_embed)
+    }
+})
        
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content === prefix + "help") {	
     message.delete(message.author); 
     var help_embed = new Discord.RichEmbed()
@@ -91,13 +99,13 @@ if(message.content === prefix + "help") {
     .setDescription("__**Liste des commandes disponible**__ [12]")
     .addField("•__**Administration**__ [2]", "``ban <user>``,``kick <user>``")
     .addField("•__**Modération**__ [3]", "``clear``,``mute``,``unmute``")
-    .addField("•__**Fun**__ [1]", "``8ball``")
-    .addField("•__**Utilitaires**__ [3]", "``stats``,``info``,``id``,``ui``")
+    .addField("•__**Fun**__ [3]", "``8ball``,``weather``")
+    .addField("•__**Utilitaires**__ [3]", "``stats``,``info``,``id``")
     .addField("•__**Anti-Raid**__ [4]", "``sp``,``report``,``rb``,``rules``")
     .addField("• __** <> **__","``Obligatoire``")
     .addField("SupportBot", ('[Support du Bot](https://discord.gg/88rtxDd)') , true)
     .addField("Invite", ('[SecurityProtect®『🚫』](https://discordapp.com/oauth2/authorize?client_id=511104745096609792&scope=bot&permissions=2146958847)') , true)
-    .setFooter("© 2018 SecurityProtect V.3.1.0", bot.user.displayAvatarURL) 
+    .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL) 
     .setTimestamp()
     message.channel.send(help_embed)
     console.log("Un utilisateur a effectuer la commande d'aide")  
@@ -105,26 +113,21 @@ if(message.content === prefix + "help") {
 })
 
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 	if(message.content === prefix + "info") {
 		message.delete(message.author);
-
-		
-		var info_embed = new Discord.RichEmbed()
+	 var info_embed = new Discord.RichEmbed()
 	 .setTitle("Information Discord")
-	 .addField("Nom du discord", message.guild.name)
-	 .addField("ID", message.guild.id)
-	 .addField("Owner du serveur", message.guild.owner)
-	 .addField("Crée le", message.guild.createdAt)
-	 .addField("Tu l'as rejoins le", message.member.joinedAt)
-     .addField("Region", message.guild.region)
-     .addField("Channels", message.guild.channels.size)
-     .addField("Members", message.guild.memberCount)
-     .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
-     .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
-     .addField("Roles", message.guild.roles.size)
+	 .addField("•__**Nom du discord**__", message.guild.name)
+	 .addField("•__**ID**__", message.guild.id)
+	 .addField("•__**Owner du serveur**__", message.guild.owner)
+	 .addField("•__**Crée le**__", message.guild.createdAt)
+	 .addField("•__**Tu l'as rejoins le**__", message.member.joinedAt)
+     .addField("•__**Region**__", message.guild.region)
+     .addField("•__**Channels**__", message.guild.channels.size)
+     .addField("•__**Members**__", message.guild.memberCount)
+     .addField("•__**Humans**__", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size)
+     .addField("•__**Bots**__", message.guild.members.filter(m => m.user.bot).size)
+     .addField("•__**Roles**__", message.guild.roles.size)
      .setColor("RANDOM")
      .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
 	 .setTimestamp()
@@ -134,63 +137,33 @@ message.channel.send(info_embed)
 }
 })
 
-bot.on("message", message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
-    if(message.content.startsWith(prefix + "ar")) {
+bot.on('message', message => {
+    if(message.content === prefix + "ui") {
         message.delete(message.author);
-    let userAR = message.mentions.users.first()
-    if(!antiRaid[userAR.id]) {
-        antiRaid[userAR.id] = {
-            sec: 0,
-        }
+        var ui_embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setTitle("User-Info")
+        .addField("•__**ID**__",  `__${message.author.id}__`)
+        .addField("•__**Username | Tag**__", `${message.author.tag}`)
+        .addField("•__**Crée Le**__", `${message.author.createdAt}`)
+        .addField("•__**Tu l'as rejoin le**__", `${message.member.joinedAt}`)
+        .addField("Gban", "**``En développement``**")
+        .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
+        .setTimestamp()
+        message.channel.send(ui_embed)
+    console.log("Commande effectue !")
     }
-
-    if(antiRaid[userAR.id].sec > 1) return message.reply("Cet utilisateur est déjà anti-raid !")
-    antiRaid[userAR.id].sec++
-
-   fs.writeFile("./ar.json", JSON.stringify(antiRaid), (err) => {
-        if(err) console.error(err)
     })
 
-    message.reply(userAR.tag + " a bien été ajouté à l'anti-raid !")
-}
-})
-
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
-if(message.content === prefix + "ui") {
-    message.delete(message.author);
-    var ui_embed = new Discord.RichEmbed()
-    .setColor("#ED7F10")
-    .setTitle("User-Info")
-    .addField("ID",  `__${message.author.id}__`)
-    .addField("Username", `${message.author.username}`)
-    .addField("Crée Le", `${message.author.createdAt}`)
-    .addField("Tu l'as rejoin le", `${message.member.joinedAt}`)
-    .addField("Gban", "``En développement``")
-    .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
-    .setTimestamp()
-    message.channel.send(ui_embed)
-console.log("Commande effectue !")
-}
-})
-
-bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content === prefix + "stats") {
     message.delete(message.author);
     var stats_embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle("Stats Du Bot")
-    .addField("Users", bot.users.size)
-    .addField("Servers", bot.guilds.size)
-    .addField("Channels", bot.channels.size)
+    .addField("•__**Users**__", bot.users.size)
+    .addField("•__**Servers**__", bot.guilds.size)
+    .addField("•__**Channels**__", bot.channels.size)
     .setFooter("© 2018 SecurityProtect", bot.user.displayAvatarURL)
     .setTimestamp()
     
@@ -200,9 +173,15 @@ message.channel.send(stats_embed)
 })
 
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
+if(message.content.startsWith(prefix + "tell")){   
+    message.delete(message.author);
+var text = message.content.split(' ').slice(1).join(' ')
+if(!text) return message.reply('Hey salut')
+message.channel.send(text)
+}
+})
+
+bot.on('message', message => {
     if(message.content.startsWith(prefix + 'id')) {
         if (message.channel.type === "dm") return;   
          message.channel.sendMessage(`**${message.author.username} **` + "Voici ton ID: " + `__${message.author.id}__`);
@@ -210,9 +189,6 @@ bot.on('message', message => {
     })
 
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content === prefix + "rules") {
     var rules_embed = new Discord.RichEmbed()
     .setColor("#ED7F10")
@@ -227,9 +203,6 @@ console.log("Commande effectue !")
 })
 
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "cdel")) {
 	message.delete(message.author);
         if(message.guild.member(message.author) !== message.guild.owner) {
@@ -249,9 +222,6 @@ if(message.content.startsWith(prefix + "cdel")) {
 })
 	
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
     if(message.content.startsWith(prefix + 'kall')) {
 	    message.delete(message.author);
         if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
@@ -268,9 +238,6 @@ if(message.content.startsWith(prefix + "cdel")) {
 
       
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permissions !");
 
@@ -294,9 +261,6 @@ if(message.content.startsWith(prefix + "kick")) {
 })
 
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
     if(message.content.startsWith(prefix + "ban")) {
         if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("Vous n'avez pas la premissions");
 
@@ -322,9 +286,6 @@ if(message.content.startsWith(prefix + "kick")) {
 
 
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
     if(message.content.startsWith(prefix + "clear")) {
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
 
@@ -338,9 +299,6 @@ if(message.content.startsWith(prefix + "kick")) {
 })
         
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if (message.content.startsWith(prefix + "8ball")) {
 	
 	message.delete(message.author);
@@ -370,9 +328,6 @@ message.channel.sendEmbed(bembed)
 })
 
 bot.on('message', message => {
-    let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
 if(message.content.startsWith(prefix + "sp")){
     if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
             if(message.author.bot) return
@@ -384,16 +339,13 @@ if(message.content.startsWith(prefix + "sp")){
     .addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
     .addField("Depuis le Serveur", message.guild.name)
     message.channel.send("**Tous le staff de SecurityProtect à été alerté ! 🚨**")
-    bot.channels.find("id", "531928219742502932").send(y)
-    bot.channels.find("id", "531928219742502932").send(" <@&531884230867681283>")
+    bot.channels.find("id", "522508136884731904").send(y)
+    bot.channels.find("id", "522508136884731904").send(" <@&516633518609137688>")
     message.delete()
     }
 })
         
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
         if(message.content.startsWith(prefix + "report")){
     if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
             if(message.author.bot) return
@@ -405,16 +357,13 @@ if(message.content.startsWith(prefix + "sp")){
     .addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
     .addField("Depuis le Serveur", message.guild.name)
     message.channel.send("**Tous le staff sp à été alerté ! 🚨**")
-    bot.channels.find("id", "531927513031639062").send(y)
-    bot.channels.find("id", "531927513031639062").send(" <@&531884230867681283>")
+    bot.channels.find("id", "511623673069961239").send(y)
+    bot.channels.find("id", "511623673069961239").send(" <@&516633518609137688>")
     message.delete()
     }
 })
         
     bot.on('message', message => {
-        let messageArray = message.content.split(' ');
-   let command = messageArray[0];
-    let args = messageArray.slice(1);
         if(message.content.startsWith(prefix + "rb")){
         if(message.channel.type !== 'text') return message.channel.send("❌ ***Les commandes en mp sont désactivées !***")
                 if(message.author.bot) return
@@ -426,8 +375,8 @@ if(message.content.startsWith(prefix + "sp")){
         .addField("🚔 Message envoyé par "+message.author.username+"#"+message.author.discriminator, "🆔 "+message.author.id)
         .addField("Depuis le Serveur", message.guild.name)
         message.channel.send("**les Administrateur de SecurityProtect à été alerté ! 🚨**")
-        bot.channels.find("id", "531927746579005459").send(y)
-        bot.channels.find("id", "531927746579005459").send(" <@&531884224408453123>")
+        bot.channels.find("id", "523494279046234112").send(y)
+        bot.channels.find("id", "523494279046234112").send(" <@&511106207784763422>")
         message.delete()
         }
     })
