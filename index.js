@@ -61,6 +61,31 @@ Et surtout passe de bons moments avec nous !`)
 
 })
 
+bot.on("guildCreate", guild => {
+    var channel = bot.channels.get('534444153749372949');
+  const ajout = new Discord.RichEmbed()
+  .setColor("0x41f441")
+  .setTitle("  Nouveau serveur !  ")
+  .addField(" Nom du serveur", guild.name)
+  .addField(" Membres", guild.memberCount)
+  .addField(" Créateur du serveur",  guild.owner.user.username)
+  .setFooter(`ID ➔ ${guild.id}`);
+  channel.send(ajout)
+  });
+  
+  bot.on("guildDelete", guild => {
+  
+    var channel = bot.channels.get('534444153749372949');
+  const retrait = new Discord.RichEmbed()
+  .setColor("#FF0000")
+  .setTitle(" Je vient de perdre un serveur !")
+  .addField("Nom du serveur", guild.name)
+  .addField(" Membres", guild.memberCount)
+  .addField(" Créateur du serveur",  guild.owner.user.username)
+  .setFooter(`ID ➔ ${guild.id}`);
+  channel.send(retrait)
+  });
+
     bot.on('message', message => {
 if(message.content === prefix + "partners") {
     message.delete(message.author);
