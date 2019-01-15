@@ -70,6 +70,7 @@ bot.on("guildCreate", guild => {
   .addField(" •__**Nom du serveur**__", guild.name)
   .addField(" •__**Membres**__", guild.memberCount)
   .addField(" •__**Créateur du serveur**__",  guild.owner.user.username)
+  .addField("Nous sommes maintenant à", bot.guilds.size)
   .setFooter(`ID ➔ ${guild.id}`);
   channel.send(ajout)
   });
@@ -84,6 +85,7 @@ bot.on("guildCreate", guild => {
   .addField("•__**Nom du serveur*__", guild.name)
   .addField(" •__**Membres**__", guild.memberCount)
   .addField(" •__**Créateur du serveur**__",  guild.owner.user.username)
+  .addField("•__**Nous sommes maintenant à**__", bot.guilds.size)
   .setFooter(`ID ➔ ${guild.id}`);
   channel.send(retrait)
   });
