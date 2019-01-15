@@ -66,7 +66,7 @@ bot.on("guildCreate", guild => {
   const ajout = new Discord.RichEmbed()
   .setColor("0x41f441")
   .setTitle("  Nouveau serveur !  ")
-  .setDescription("<a:529784344261165090:533767529768812575>•__**Ajout du bot")
+  .setDescription("<a:529784344261165090:533767529768812575>•__**Ajout du bot**__")
   .addField(" •__**Nom du serveur**__", guild.name)
   .addField(" •__**Membres**__", guild.memberCount)
   .addField(" •__**Créateur du serveur**__",  guild.owner.user.username)
