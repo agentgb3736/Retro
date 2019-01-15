@@ -66,9 +66,10 @@ bot.on("guildCreate", guild => {
   const ajout = new Discord.RichEmbed()
   .setColor("0x41f441")
   .setTitle("  Nouveau serveur !  ")
-  .addField(" Nom du serveur", guild.name)
-  .addField(" Membres", guild.memberCount)
-  .addField(" Créateur du serveur",  guild.owner.user.username)
+  .setDescription("<a:529784344261165090:533767529768812575>•__**Ajout du bot")
+  .addField(" •__**Nom du serveur**__", guild.name)
+  .addField(" •__**Membres**__", guild.memberCount)
+  .addField(" •__**Créateur du serveur**__",  guild.owner.user.username)
   .setFooter(`ID ➔ ${guild.id}`);
   channel.send(ajout)
   });
@@ -79,9 +80,10 @@ bot.on("guildCreate", guild => {
   const retrait = new Discord.RichEmbed()
   .setColor("#FF0000")
   .setTitle(" Je vient de perdre un serveur !")
-  .addField("Nom du serveur", guild.name)
-  .addField(" Membres", guild.memberCount)
-  .addField(" Créateur du serveur",  guild.owner.user.username)
+  .setDescription("<a:529784344261165090:533767529768812575>•__**Retrait du bot**__")
+  .addField("•__**Nom du serveur*__", guild.name)
+  .addField(" •__**Membres**__", guild.memberCount)
+  .addField(" •__**Créateur du serveur**__",  guild.owner.user.username)
   .setFooter(`ID ➔ ${guild.id}`);
   channel.send(retrait)
   });
