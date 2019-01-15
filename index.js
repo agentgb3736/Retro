@@ -102,36 +102,6 @@ if(message.content === prefix + "partners") {
 }
 })
 
-bot.on("message", message => {
-    if(message.content === prefix + "stop") {
-        message.delete(message.author); 
-            if(message.author.id !== "490220102650953729") return message.reply("Permissions insuffisantes.") && bot.users.find("id", "490220102650953729").send(message.author.tag + " (" + message.author.id + ") a tenté de redémarrer le bot !")
-            function stopBot() {
-                message.channel.send("*Arret en cours...*").then(msg => bot.destroy())
-                console.log("Arrêt en cours")
-            }
-    
-            stopBot()
-    
-            message.channel.send("*Arret effectué avec succès !*")
-            console.log("stop")
-        }
-        })
-
-        bot.on("message", message => {
-            if(message.content === prefix + "restart") {
-                    if(message.author.id !== "490220102650953729") return message.reply("Permissions insuffisantes.") && bot.users.find("id", "490220102650953729").send(message.author.tag + " (" + message.author.id + ") a tenté de redémarrer le bot !")
-                    function resetBot() {
-                        message.channel.send("*Redémarrage en cours...*").then(msg => bot.destroy()).then(() => bot.login("NTExMTA0NzQ1MDk2NjA5Nzky.DxOY1Q.cIJf_iImCwYZxk9mBRKEfN_b868"))
-                        console.log("Redémarrage en cours")
-                    }
-            
-                    resetBot()
-            
-                    message.channel.send("*Redémarrage effectué avec succès !*")
-                    console.log("Redémarré")
-                }
-                })
      
 bot.on('message', message => {
 if(message.content === prefix + "help") {	
